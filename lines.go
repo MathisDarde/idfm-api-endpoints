@@ -21,11 +21,11 @@ const (
 )
 
 type LineData struct {
-	id               string        `json:"id"`
-	name             string        `json:"name"`
-	mode             TransportMode `json:"mode"`
-	background_color string        `json:"background_color"`
-	text_color       string        `json:"text_color"`
+	ID              string        `json:"id"`
+	Name            string        `json:"name"`
+	Mode            TransportMode `json:"mode"`
+	BackgroundColor string        `json:"background_color"`
+	TextColor       string        `json:"text_color"`
 }
 
 const (
@@ -57,15 +57,15 @@ func FetchLines() {
 		tSubMode := fmt.Sprint(item["transportsubmode"])
 
 		line := LineData{
-			id:               fmt.Sprint(item["id_line"]),
-			name:             fmt.Sprint(item["name_line"]),
-			mode:             detectMode(tMode, tSubMode),
-			background_color: fmt.Sprint(item["colourweb_hexa"]),
-			text_color:       fmt.Sprint(item["textcolourweb_hexa"]),
+			ID:              fmt.Sprint(item["id_line"]),
+			Name:            fmt.Sprint(item["name_line"]),
+			Mode:            detectMode(tMode, tSubMode),
+			BackgroundColor: fmt.Sprint(item["colourweb_hexa"]),
+			TextColor:       fmt.Sprint(item["textcolourweb_hexa"]),
 		}
 
 		// Optionnel : ne pas ajouter si l'ID est vide
-		if line.id != "<nil>" && line.id != "" {
+		if line.ID != "<nil>" && line.ID != "" {
 			processed = append(processed, line)
 		}
 	}
@@ -93,7 +93,7 @@ func detectMode(transportMode string, transportSubmode string) TransportMode {
 		}
 	case "metro":
 		return TransportModeMetro
-	case "tramway":
+	case "tram":
 		return TransportModeTramway
 	case "bus":
 		return TransportModeBus
