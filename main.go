@@ -8,5 +8,8 @@ func main() {
 	fmt.Println("📍 Traitement des arrêts...")
 	FetchStops()
 
+	fmt.Println("📍 Traitement des lignes...")
+	FetchLines()
+
 	fmt.Println("✅ Toutes les tâches sont terminées.")
 }
