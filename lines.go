@@ -14,6 +14,7 @@ const (
 	TransportModeMetro      TransportMode = "metro"
 	TransportModeTransilien TransportMode = "transilien"
 	TransportModeTer        TransportMode = "ter"
+	TransportModeNavette    TransportMode = "navette"
 	TransportModeBus        TransportMode = "bus"
 	TransportModeCableway   TransportMode = "cableway"
 	TransportModeTramway    TransportMode = "tramway"
@@ -80,11 +81,13 @@ func detectMode(transportMode string, transportSubmode string) TransportMode {
 	case "rail":
 		switch transportSubmode {
 		case "suburbanRailway":
-			return TransportModeRer
-		case "local":
 			return TransportModeTransilien
+		case "local":
+			return TransportModeRer
 		case "regionalRail":
 			return TransportModeTer
+		case "railShuttle":
+			return TransportModeNavette
 		default:
 			return TransportModeTransilien
 		}
