@@ -40,15 +40,21 @@ func FetchStops() {
 		return
 	}
 
-	// Filtrage (Exemple simple)
 	var processed []map[string]string
 	for _, item := range raw {
+		var wktGeom string
+		if geo, ok := item["pointgeo"].(map[string]interface{}); ok {
+			lat := geo["lat"]
+			lon := geo["lon"]
+			wktGeom = fmt.Sprintf("POINT(%v %v)", lon, lat)
+		}
+
 		processed = append(processed, map[string]string{
 			"id":      fmt.Sprint(item["stop_id"]),
 			"line_id": fmt.Sprint(item["id"]),
 			"name":    fmt.Sprint(item["stop_name"]),
 			"city":    fmt.Sprint(item["nom_commune"]),
-			"geom":    fmt.Sprint(item["pointgeo"]),
+			"geom":    wktGeom,
 		})
 	}
 
