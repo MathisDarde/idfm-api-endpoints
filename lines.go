@@ -21,11 +21,11 @@ const (
 )
 
 type LineData struct {
-	ID              string        `json:"id"`
-	Name            string        `json:"name"`
-	Mode            TransportMode `json:"mode"`
-	BackgroundColor string        `json:"background_color"`
-	TextColor       string        `json:"text_color"`
+	id               string        `json:"id"`
+	name             string        `json:"name"`
+	mode             TransportMode `json:"mode"`
+	background_color string        `json:"background_color"`
+	text_color       string        `json:"text_color"`
 }
 
 const (
@@ -57,15 +57,15 @@ func FetchLines() {
 		tSubMode := fmt.Sprint(item["transportsubmode"])
 
 		line := LineData{
-			ID:              fmt.Sprint(item["id_line"]),
-			Name:            fmt.Sprint(item["name_line"]),
-			Mode:            detectMode(tMode, tSubMode),
-			BackgroundColor: fmt.Sprint(item["colourweb_hexa"]),
-			TextColor:       fmt.Sprint(item["textcolourweb_hexa"]),
+			id:               fmt.Sprint(item["id_line"]),
+			name:             fmt.Sprint(item["name_line"]),
+			mode:             detectMode(tMode, tSubMode),
+			background_color: fmt.Sprint(item["colourweb_hexa"]),
+			text_color:       fmt.Sprint(item["textcolourweb_hexa"]),
 		}
 
 		// Optionnel : ne pas ajouter si l'ID est vide
-		if line.ID != "<nil>" && line.ID != "" {
+		if line.id != "<nil>" && line.id != "" {
 			processed = append(processed, line)
 		}
 	}

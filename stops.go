@@ -44,11 +44,11 @@ func FetchStops() {
 	var processed []map[string]string
 	for _, item := range raw {
 		processed = append(processed, map[string]string{
-			"ID":     fmt.Sprint(item["stop_id"]),
-			"LineID": fmt.Sprint(item["id"]),
-			"name":   fmt.Sprint(item["stop_name"]),
-			"city":   fmt.Sprint(item["nom_commune"]),
-			"geom":   fmt.Sprint(item["pointgeo"]),
+			"id":      fmt.Sprint(item["stop_id"]),
+			"line_id": fmt.Sprint(item["id"]),
+			"name":    fmt.Sprint(item["stop_name"]),
+			"city":    fmt.Sprint(item["nom_commune"]),
+			"geom":    fmt.Sprint(item["pointgeo"]),
 		})
 	}
 
