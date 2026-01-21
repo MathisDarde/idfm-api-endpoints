@@ -40,21 +40,21 @@ func FetchStops() {
 		return
 	}
 
-	var processed []map[string]string
+	var processed []map[string]interface{}
 	for _, item := range raw {
-		var wktGeom string
+		var lat, lon float64
 		if geo, ok := item["pointgeo"].(map[string]interface{}); ok {
-			lat := geo["lat"]
-			lon := geo["lon"]
-			wktGeom = fmt.Sprintf("POINT(%v %v)", lon, lat)
+			lat, _ = geo["lat"].(float64)
+			lon, _ = geo["lon"].(float64)
 		}
 
-		processed = append(processed, map[string]string{
+		processed = append(processed, map[string]interface{}{
 			"id":      fmt.Sprint(item["stop_id"]),
 			"line_id": fmt.Sprint(item["id"]),
 			"name":    fmt.Sprint(item["stop_name"]),
 			"city":    fmt.Sprint(item["nom_commune"]),
-			"geom":    wktGeom,
+			"lat":     lat,
+			"lon":     lon,
 		})
 	}
 
