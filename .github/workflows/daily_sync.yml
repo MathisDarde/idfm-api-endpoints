@@ -27,6 +27,12 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add data.json data.backup.json
-          git commit -m "chore: update IDFM data [skip ci]" || echo "No changes to commit"
-          git push
+
+          git add *.json
+          
+          if git diff --cached --quiet; then
+            echo "Aucun changement détecté dans les données."
+          else
+            git commit -m "chore: update IDFM data (stops & lines) [skip ci]"
+            git push
+          fi
