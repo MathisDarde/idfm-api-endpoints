@@ -25,13 +25,13 @@ type Variant struct {
 }
 
 type OptimizedLine struct {
-	RouteID   string    `json:"route_id"`
+	ID        int       `json:"id"`       // ID numérique unique (1, 2, 3...)
+	RouteID   string    `json:"route_id"` // ID technique IDFM
 	ShortName string    `json:"short_name"`
 	Variants  []Variant `json:"variants"`
 }
 
 func FetchRoutes() {
-	// Préparation du backup avant de commencer
 	prepareBackupOrder(RoutesFile, RoutesBackup)
 
 	fmt.Println("⏳ Récupération des arrêts-lignes depuis IDFM...")
@@ -65,7 +65,6 @@ func FetchRoutes() {
 			stopLookup[key] = stopID
 		}
 	}
-	fmt.Printf("✅ %d arrêts indexés\n", len(stopLookup))
 
 	fmt.Println("⏳ Récupération des tracés depuis IDFM...")
 	respTraces, err := http.Get(TracesURL)
@@ -76,10 +75,7 @@ func FetchRoutes() {
 	defer respTraces.Body.Close()
 
 	var rawTraces []map[string]interface{}
-	if err := json.NewDecoder(respTraces.Body).Decode(&rawTraces); err != nil {
-		checkErrOrder(err, RoutesFile, RoutesBackup)
-		return
-	}
+	json.NewDecoder(respTraces.Body).Decode(&rawTraces)
 
 	rawVariantsMap := make(map[string][][]string)
 	lineNames := make(map[string]string)
@@ -120,8 +116,19 @@ func FetchRoutes() {
 		}
 	}
 
+	// --- NOUVEAU : Tri des clés pour garantir des IDs stables ---
+	var routeIDs []string
+	for rID := range rawVariantsMap {
+		routeIDs = append(routeIDs, rID)
+	}
+	sort.Strings(routeIDs) // Tri par ordre alphabétique des IDs IDFM
+
 	var finalData []OptimizedLine
-	for routeID, variants := range rawVariantsMap {
+	idCounter := 1 // Initialisation de l'ID numérique
+
+	for _, routeID := range routeIDs {
+		variants := rawVariantsMap[routeID]
+
 		sort.Slice(variants, func(i, j int) bool {
 			return len(variants[i]) > len(variants[j])
 		})
@@ -148,11 +155,14 @@ func FetchRoutes() {
 			})
 		}
 
+		// Ajout de l'ID numérique incrémenté
 		finalData = append(finalData, OptimizedLine{
+			ID:        idCounter,
 			RouteID:   routeID,
 			ShortName: lineNames[routeID],
 			Variants:  variantObjects,
 		})
+		idCounter++
 	}
 
 	data, _ := json.MarshalIndent(finalData, "", "  ")
@@ -162,6 +172,8 @@ func FetchRoutes() {
 	}
 	fmt.Printf("✅ %d lignes traitées. Fichier généré : %s\n", len(finalData), RoutesFile)
 }
+
+// ... (Gardez les fonctions utilitaires : prepareBackupOrder, checkErrOrder, isSubSequence, isDuplicate, hashSequence)
 
 // --- Fonctions Utilitaires Système (Backup & Error Handling) ---
 
