@@ -10,9 +10,9 @@ import (
 	"strings"
 )
 
-// URLs des Datasets IDFM
 const (
-	StopsIDFMURL = "https://data.iledefrance-mobilites.fr/api/explore/v2.1/catalog/datasets/arrets-lignes/exports/json?limit=-1"
+	// Dataset de référence pour tous les points d'arrêts (plus fiable)
+	StopsIDFMURL = "https://data.iledefrance-mobilites.fr/api/explore/v2.1/catalog/datasets/arrets/exports/json?limit=-1"
 	TracesURL    = "https://data.iledefrance-mobilites.fr/api/explore/v2.1/catalog/datasets/traces-des-lignes-de-transport-en-commun-idfm/exports/json?limit=-1"
 )
 
@@ -23,57 +23,59 @@ type OptimizedLine struct {
 }
 
 func FetchRoutes() {
-	// 1. Récupération des arrêts pour le matching géographique
-	fmt.Println("⏳ Fetching stops from IDFM...")
+	// 1. Indexation des Arrêts
+	fmt.Println("⏳ Récupération des arrêts depuis IDFM...")
 	respStops, err := http.Get(StopsIDFMURL)
 	if err != nil {
-		fmt.Printf("❌ Erreur stops: %v\n", err)
+		fmt.Printf("❌ Erreur HTTP Stops: %v\n", err)
 		return
 	}
 	defer respStops.Body.Close()
 
 	var rawStops []map[string]interface{}
-	if err := json.NewDecoder(respStops.Body).Decode(&rawStops); err != nil {
-		fmt.Printf("❌ Erreur décodage stops: %v\n", err)
-		return
-	}
+	json.NewDecoder(respStops.Body).Decode(&rawStops)
 
-	// Indexation : on utilise une précision de 4 décimales (~10m) pour être plus tolérant
 	stopLookup := make(map[string]string)
 	for _, s := range rawStops {
-		id := fmt.Sprint(s["id_arret"])
-		lat, ok1 := s["stop_lat"].(float64)
-		lon, ok2 := s["stop_lon"].(float64)
+		// IDFM utilise souvent 'stop_id' ou 'id' ou 'arret_id'
+		id := getFirstString(s, "stop_id", "id", "arret_id", "id_arret")
 
-		if ok1 && ok2 && id != "" && id != "<nil>" {
+		var lat, lon float64
+		// Tentative via les champs directs
+		if l, ok := s["stop_lat"].(float64); ok {
+			lat = l
+			lon = s["stop_lon"].(float64)
+		} else if geo, ok := s["geo_point_2d"].(map[string]interface{}); ok {
+			// Tentative via l'objet geo_point_2d (standard IDFM)
+			lat = geo["lat"].(float64)
+			lon = geo["lon"].(float64)
+		}
+
+		if id != "" && lat != 0 {
+			// On utilise 4 décimales (~11 mètres de précision) pour le matching
 			key := fmt.Sprintf("%.4f,%.4f", lat, lon)
 			stopLookup[key] = id
 		}
 	}
-	fmt.Printf("✅ %d stops indexés\n", len(stopLookup))
+	fmt.Printf("✅ %d arrêts indexés pour le matching\n", len(stopLookup))
 
-	// 2. Récupération des traces géométriques
-	fmt.Println("⏳ Fetching traces from IDFM...")
+	// 2. Traitement des Tracés
+	fmt.Println("⏳ Récupération des tracés depuis IDFM...")
 	respTraces, err := http.Get(TracesURL)
 	if err != nil {
-		fmt.Printf("❌ Erreur traces: %v\n", err)
+		fmt.Printf("❌ Erreur HTTP Traces: %v\n", err)
 		return
 	}
 	defer respTraces.Body.Close()
 
 	var rawTraces []map[string]interface{}
-	if err := json.NewDecoder(respTraces.Body).Decode(&rawTraces); err != nil {
-		fmt.Printf("❌ Erreur décodage traces: %v\n", err)
-		return
-	}
+	json.NewDecoder(respTraces.Body).Decode(&rawTraces)
 
-	// Utilisation d'une map temporaire pour grouper par RouteID
 	tempMap := make(map[string]*OptimizedLine)
 
 	for _, item := range rawTraces {
 		routeID := fmt.Sprint(item["id_ilico"])
 		shortName := fmt.Sprint(item["route_short_name"])
-
 		if routeID == "" || routeID == "<nil>" {
 			continue
 		}
@@ -86,72 +88,65 @@ func FetchRoutes() {
 			}
 		}
 
-		// Navigation dans l'objet Shape (GeoJSON MultiLineString)
-		shape, ok := item["shape"].(map[string]interface{})
-		if !ok {
-			continue
-		}
-		geometry, ok := shape["geometry"].(map[string]interface{})
-		if !ok {
-			continue
-		}
+		// Extraction GeoJSON
+		shape, _ := item["shape"].(map[string]interface{})
+		geometry, _ := shape["geometry"].(map[string]interface{})
 		coordsSegments, ok := geometry["coordinates"].([]interface{})
 		if !ok {
 			continue
 		}
 
-		// Pour chaque segment de la ligne
+		// On gère MultiLineString (IDFM)
 		for _, segment := range coordsSegments {
-			points, ok := segment.([]interface{})
-			if !ok {
-				continue
-			}
-
+			points := segment.([]interface{})
 			var currentVariant []string
-			var lastAddedStopID string
+			var lastAdded string
 
 			for _, p := range points {
-				pCoord, ok := p.([]interface{})
-				if !ok || len(pCoord) < 2 {
-					continue
-				}
+				coord := p.([]interface{})
+				ln, lt := coord[0].(float64), coord[1].(float64)
 
-				lon := pCoord[0].(float64)
-				lat := pCoord[1].(float64)
-
-				// Matching avec 4 décimales
-				key := fmt.Sprintf("%.4f,%.4f", lat, lon)
+				// Matching flou à 4 décimales
+				key := fmt.Sprintf("%.4f,%.4f", lt, ln)
 				if stopID, found := stopLookup[key]; found {
-					if stopID != lastAddedStopID {
+					if stopID != lastAdded {
 						currentVariant = append(currentVariant, stopID)
-						lastAddedStopID = stopID
+						lastAdded = stopID
 					}
 				}
 			}
 
-			// On n'ajoute que si la séquence a au moins 2 arrêts et n'est pas un doublon
 			if len(currentVariant) >= 2 && !isDuplicate(tempMap[routeID].Variants, currentVariant) {
 				tempMap[routeID].Variants = append(tempMap[routeID].Variants, currentVariant)
 			}
 		}
 	}
 
-	// 3. Transformation de la Map en Tableau (Slice)
-	var finalTable []OptimizedLine
-	for _, val := range tempMap {
-		finalTable = append(finalTable, *val)
+	// 3. Conversion en tableau final
+	var final []OptimizedLine
+	for _, v := range tempMap {
+		final = append(final, *v)
 	}
 
-	// 4. Sauvegarde
-	output, _ := json.MarshalIndent(finalTable, "", "  ")
-	os.WriteFile("optimized_routes.json", output, 0644)
-	fmt.Printf("✅ %d lignes traitées et sauvegardées dans optimized_routes.json\n", len(finalTable))
+	data, _ := json.MarshalIndent(final, "", "  ")
+	os.WriteFile("optimized_routes.json", data, 0644)
+	fmt.Printf("✅ %d lignes traitées avec variants.\n", len(final))
 }
 
-func isDuplicate(existing [][]string, newVariant []string) bool {
-	newHash := hashSequence(newVariant)
-	for _, v := range existing {
-		if hashSequence(v) == newHash {
+// Helper pour tester plusieurs noms de champs JSON possibles
+func getFirstString(m map[string]interface{}, keys ...string) string {
+	for _, k := range keys {
+		if val, ok := m[k]; ok && val != nil {
+			return fmt.Sprint(val)
+		}
+	}
+	return ""
+}
+
+func isDuplicate(existing [][]string, newVar []string) bool {
+	h := hashSequence(newVar)
+	for _, e := range existing {
+		if hashSequence(e) == h {
 			return true
 		}
 	}
@@ -159,7 +154,7 @@ func isDuplicate(existing [][]string, newVariant []string) bool {
 }
 
 func hashSequence(s []string) string {
-	h := md5.New()
-	io.WriteString(h, strings.Join(s, ","))
-	return fmt.Sprintf("%x", h.Sum(nil))
+	hasher := md5.New()
+	io.WriteString(hasher, strings.Join(s, ","))
+	return fmt.Sprintf("%x", hasher.Sum(nil))
 }
