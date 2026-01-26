@@ -7,159 +7,164 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"sort"
 	"strconv"
 	"strings"
 )
 
 const (
-	// On utilise arrets-lignes pour avoir les IDs exacts de ta DB (ex: IDFM:423541)
 	StopsLignesURL = "https://data.iledefrance-mobilites.fr/api/explore/v2.1/catalog/datasets/arrets-lignes/exports/json?limit=-1"
 	TracesURL      = "https://data.iledefrance-mobilites.fr/api/explore/v2.1/catalog/datasets/traces-des-lignes-de-transport-en-commun-idfm/exports/json?limit=-1"
 )
 
+type Variant struct {
+	ID    string   `json:"id"`    // Format: {route_id}_{index}
+	Stops []string `json:"stops"` // Liste des IDs d'arrêts
+}
+
 type OptimizedLine struct {
-	RouteID   string     `json:"route_id"`
-	ShortName string     `json:"short_name"`
-	Variants  [][]string `json:"variants"`
+	RouteID   string    `json:"route_id"`
+	ShortName string    `json:"short_name"`
+	Variants  []Variant `json:"variants"`
 }
 
 func FetchRoutes() {
-	// 1. Indexation des Arrêts depuis arrets-lignes
-	fmt.Println("⏳ Récupération des arrêts-lignes depuis IDFM...")
-	respStops, err := http.Get(StopsLignesURL)
-	if err != nil {
-		fmt.Printf("❌ Erreur HTTP Stops: %v\n", err)
-		return
-	}
+	// 1. Indexation des Arrêts
+	fmt.Println("⏳ Récupération des arrêts-lignes...")
+	respStops, _ := http.Get(StopsLignesURL)
 	defer respStops.Body.Close()
 
 	var rawStops []map[string]interface{}
-	if err := json.NewDecoder(respStops.Body).Decode(&rawStops); err != nil {
-		fmt.Printf("❌ Erreur décodage stops: %v\n", err)
-		return
-	}
+	json.NewDecoder(respStops.Body).Decode(&rawStops)
 
 	stopLookup := make(map[string]string)
 	for _, s := range rawStops {
-		// On récupère le stop_id (ex: IDFM:423541)
 		stopID := fmt.Sprint(s["stop_id"])
-
 		var lat, lon float64
-		// On privilégie l'objet pointgeo fourni dans ton exemple
 		if geo, ok := s["pointgeo"].(map[string]interface{}); ok {
 			lat, _ = geo["lat"].(float64)
 			lon, _ = geo["lon"].(float64)
 		} else {
-			// Fallback sur stop_lat/stop_lon (parfois en string dans ce dataset)
 			lat, _ = strconv.ParseFloat(fmt.Sprint(s["stop_lat"]), 64)
 			lon, _ = strconv.ParseFloat(fmt.Sprint(s["stop_lon"]), 64)
 		}
 
 		if stopID != "" && stopID != "<nil>" && lat != 0 {
-			// Matching flou à 4 décimales (~10-11 mètres)
 			key := fmt.Sprintf("%.4f,%.4f", lat, lon)
 			stopLookup[key] = stopID
 		}
 	}
-	fmt.Printf("✅ %d arrêts indexés (format stop_id IDFM)\n", len(stopLookup))
+	fmt.Printf("✅ %d arrêts indexés\n", len(stopLookup))
 
-	// 2. Traitement des Tracés
-	fmt.Println("⏳ Récupération des tracés depuis IDFM...")
-	respTraces, err := http.Get(TracesURL)
-	if err != nil {
-		fmt.Printf("❌ Erreur HTTP Traces: %v\n", err)
-		return
-	}
+	// 2. Récupération des Tracés
+	fmt.Println("⏳ Récupération des tracés...")
+	respTraces, _ := http.Get(TracesURL)
 	defer respTraces.Body.Close()
 
 	var rawTraces []map[string]interface{}
-	if err := json.NewDecoder(respTraces.Body).Decode(&rawTraces); err != nil {
-		fmt.Printf("❌ Erreur décodage traces: %v\n", err)
-		return
-	}
+	json.NewDecoder(respTraces.Body).Decode(&rawTraces)
 
-	tempMap := make(map[string]*OptimizedLine)
+	// Map temporaire pour stocker TOUTES les séquences brutes par ligne
+	rawVariantsMap := make(map[string][][]string)
+	lineNames := make(map[string]string)
 
 	for _, item := range rawTraces {
-		// id_ilico dans les traces correspond à l'id de ligne dans arrets-lignes (ex: IDFM:C02708)
 		routeID := fmt.Sprint(item["id_ilico"])
-		shortName := fmt.Sprint(item["route_short_name"])
-
 		if routeID == "" || routeID == "<nil>" {
 			continue
 		}
 
-		if _, ok := tempMap[routeID]; !ok {
-			tempMap[routeID] = &OptimizedLine{
-				RouteID:   routeID,
-				ShortName: shortName,
-				Variants:  [][]string{},
-			}
-		}
+		lineNames[routeID] = fmt.Sprint(item["route_short_name"])
 
 		shape, _ := item["shape"].(map[string]interface{})
-		if shape == nil {
-			continue
-		}
 		geometry, _ := shape["geometry"].(map[string]interface{})
-		if geometry == nil {
-			continue
-		}
-
 		coordsSegments, ok := geometry["coordinates"].([]interface{})
 		if !ok {
 			continue
 		}
 
 		for _, segment := range coordsSegments {
-			points, ok := segment.([]interface{})
-			if !ok {
-				continue
-			}
-
+			points := segment.([]interface{})
 			var currentVariant []string
-			var lastAddedID string
+			var lastID string
 
 			for _, p := range points {
-				coord, ok := p.([]interface{})
-				if !ok || len(coord) < 2 {
-					continue
-				}
-
-				ln := coord[0].(float64)
-				lt := coord[1].(float64)
-
-				key := fmt.Sprintf("%.4f,%.4f", lt, ln)
-				if stopID, found := stopLookup[key]; found {
-					if stopID != lastAddedID {
-						currentVariant = append(currentVariant, stopID)
-						lastAddedID = stopID
+				coord := p.([]interface{})
+				key := fmt.Sprintf("%.4f,%.4f", coord[1].(float64), coord[0].(float64))
+				if id, found := stopLookup[key]; found {
+					if id != lastID {
+						currentVariant = append(currentVariant, id)
+						lastID = id
 					}
 				}
 			}
-
-			if len(currentVariant) >= 2 && !isDuplicate(tempMap[routeID].Variants, currentVariant) {
-				tempMap[routeID].Variants = append(tempMap[routeID].Variants, currentVariant)
+			if len(currentVariant) >= 2 {
+				rawVariantsMap[routeID] = append(rawVariantsMap[routeID], currentVariant)
 			}
 		}
 	}
 
-	// 3. Conversion en tableau final
-	var final []OptimizedLine
-	for _, v := range tempMap {
-		final = append(final, *v)
+	// 3. Filtrage et Nettoyage (Sub-sequences)
+	var finalData []OptimizedLine
+
+	for routeID, variants := range rawVariantsMap {
+		// A. Trier par longueur décroissante (les plus longs d'abord)
+		sort.Slice(variants, func(i, j int) bool {
+			return len(variants[i]) > len(variants[j])
+		})
+
+		// B. Ne garder que les séquences qui ne sont pas des sous-parties d'une autre
+		var filtered [][]string
+		for _, v := range variants {
+			isSub := false
+			for _, master := range filtered {
+				if isSubSequence(v, master) {
+					isSub = true
+					break
+				}
+			}
+			if !isSub && !isDuplicate(filtered, v) {
+				filtered = append(filtered, v)
+			}
+		}
+
+		// C. Créer les objets variants avec ID unique
+		var variantObjects []Variant
+		for i, v := range filtered {
+			variantObjects = append(variantObjects, Variant{
+				ID:    fmt.Sprintf("%s_%d", routeID, i),
+				Stops: v,
+			})
+		}
+
+		finalData = append(finalData, OptimizedLine{
+			RouteID:   routeID,
+			ShortName: lineNames[routeID],
+			Variants:  variantObjects,
+		})
 	}
 
-	// Sauvegarde
-	data, _ := json.MarshalIndent(final, "", "  ")
+	// 4. Sauvegarde
+	data, _ := json.MarshalIndent(finalData, "", "  ")
 	os.WriteFile("optimized_routes.json", data, 0644)
-	fmt.Printf("✅ %d lignes traitées avec succès.\n", len(final))
+	fmt.Printf("✅ %d lignes traitées. Fichier généré : optimized_routes.json\n", len(finalData))
 }
 
+// isSubSequence vérifie si 'sub' est contenue dans 'main'
+func isSubSequence(sub []string, main []string) bool {
+	if len(sub) >= len(main) {
+		return false
+	}
+	sStr := strings.Join(sub, "|")
+	mStr := strings.Join(main, "|")
+	return strings.Contains(mStr, sStr)
+}
+
+// isDuplicate évite les copies exactes
 func isDuplicate(existing [][]string, newVar []string) bool {
-	h := hashSequence(newVar)
+	newHash := hashSequence(newVar)
 	for _, e := range existing {
-		if hashSequence(e) == h {
+		if hashSequence(e) == newHash {
 			return true
 		}
 	}
@@ -167,7 +172,7 @@ func isDuplicate(existing [][]string, newVar []string) bool {
 }
 
 func hashSequence(s []string) string {
-	hasher := md5.New()
-	io.WriteString(hasher, strings.Join(s, ","))
-	return fmt.Sprintf("%x", hasher.Sum(nil))
+	h := md5.New()
+	io.WriteString(h, strings.Join(s, ","))
+	return fmt.Sprintf("%x", h.Sum(nil))
 }
