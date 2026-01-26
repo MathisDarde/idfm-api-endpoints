@@ -7,13 +7,14 @@ import (
 	"io"
 	"net/http"
 	"os"
+	"strconv"
 	"strings"
 )
 
 const (
-	// Dataset de référence pour tous les points d'arrêts (format spécifique fourni)
-	StopsIDFMURL = "https://data.iledefrance-mobilites.fr/api/explore/v2.1/catalog/datasets/arrets/exports/json?limit=-1"
-	TracesURL    = "https://data.iledefrance-mobilites.fr/api/explore/v2.1/catalog/datasets/traces-des-lignes-de-transport-en-commun-idfm/exports/json?limit=-1"
+	// On utilise arrets-lignes pour avoir les IDs exacts de ta DB (ex: IDFM:423541)
+	StopsLignesURL = "https://data.iledefrance-mobilites.fr/api/explore/v2.1/catalog/datasets/arrets-lignes/exports/json?limit=-1"
+	TracesURL      = "https://data.iledefrance-mobilites.fr/api/explore/v2.1/catalog/datasets/traces-des-lignes-de-transport-en-commun-idfm/exports/json?limit=-1"
 )
 
 type OptimizedLine struct {
@@ -23,9 +24,9 @@ type OptimizedLine struct {
 }
 
 func FetchRoutes() {
-	// 1. Indexation des Arrêts
-	fmt.Println("⏳ Récupération des arrêts depuis IDFM...")
-	respStops, err := http.Get(StopsIDFMURL)
+	// 1. Indexation des Arrêts depuis arrets-lignes
+	fmt.Println("⏳ Récupération des arrêts-lignes depuis IDFM...")
+	respStops, err := http.Get(StopsLignesURL)
 	if err != nil {
 		fmt.Printf("❌ Erreur HTTP Stops: %v\n", err)
 		return
@@ -40,22 +41,27 @@ func FetchRoutes() {
 
 	stopLookup := make(map[string]string)
 	for _, s := range rawStops {
-		// Utilisation des champs fournis dans ton exemple JSON
-		id := fmt.Sprint(s["arrid"])
+		// On récupère le stop_id (ex: IDFM:423541)
+		stopID := fmt.Sprint(s["stop_id"])
 
 		var lat, lon float64
-		if geo, ok := s["arrgeopoint"].(map[string]interface{}); ok {
+		// On privilégie l'objet pointgeo fourni dans ton exemple
+		if geo, ok := s["pointgeo"].(map[string]interface{}); ok {
 			lat, _ = geo["lat"].(float64)
 			lon, _ = geo["lon"].(float64)
+		} else {
+			// Fallback sur stop_lat/stop_lon (parfois en string dans ce dataset)
+			lat, _ = strconv.ParseFloat(fmt.Sprint(s["stop_lat"]), 64)
+			lon, _ = strconv.ParseFloat(fmt.Sprint(s["stop_lon"]), 64)
 		}
 
-		if id != "" && id != "<nil>" && lat != 0 {
-			// On utilise 4 décimales (~11m de précision) pour le matching flou
+		if stopID != "" && stopID != "<nil>" && lat != 0 {
+			// Matching flou à 4 décimales (~10-11 mètres)
 			key := fmt.Sprintf("%.4f,%.4f", lat, lon)
-			stopLookup[key] = id
+			stopLookup[key] = stopID
 		}
 	}
-	fmt.Printf("✅ %d arrêts indexés pour le matching\n", len(stopLookup))
+	fmt.Printf("✅ %d arrêts indexés (format stop_id IDFM)\n", len(stopLookup))
 
 	// 2. Traitement des Tracés
 	fmt.Println("⏳ Récupération des tracés depuis IDFM...")
@@ -75,8 +81,10 @@ func FetchRoutes() {
 	tempMap := make(map[string]*OptimizedLine)
 
 	for _, item := range rawTraces {
+		// id_ilico dans les traces correspond à l'id de ligne dans arrets-lignes (ex: IDFM:C02708)
 		routeID := fmt.Sprint(item["id_ilico"])
 		shortName := fmt.Sprint(item["route_short_name"])
+
 		if routeID == "" || routeID == "<nil>" {
 			continue
 		}
@@ -89,7 +97,6 @@ func FetchRoutes() {
 			}
 		}
 
-		// Navigation sécurisée dans l'objet Shape (GeoJSON)
 		shape, _ := item["shape"].(map[string]interface{})
 		if shape == nil {
 			continue
@@ -104,7 +111,6 @@ func FetchRoutes() {
 			continue
 		}
 
-		// On parcourt les segments (MultiLineString)
 		for _, segment := range coordsSegments {
 			points, ok := segment.([]interface{})
 			if !ok {
@@ -112,7 +118,7 @@ func FetchRoutes() {
 			}
 
 			var currentVariant []string
-			var lastAdded string
+			var lastAddedID string
 
 			for _, p := range points {
 				coord, ok := p.([]interface{})
@@ -120,37 +126,34 @@ func FetchRoutes() {
 					continue
 				}
 
-				// GeoJSON : [lon, lat]
 				ln := coord[0].(float64)
 				lt := coord[1].(float64)
 
-				// Tentative de matching sur la coordonnée précise (4 décimales)
 				key := fmt.Sprintf("%.4f,%.4f", lt, ln)
 				if stopID, found := stopLookup[key]; found {
-					if stopID != lastAdded {
+					if stopID != lastAddedID {
 						currentVariant = append(currentVariant, stopID)
-						lastAdded = stopID
+						lastAddedID = stopID
 					}
 				}
 			}
 
-			// On n'enregistre que si on a trouvé au moins 2 arrêts sur le tracé
 			if len(currentVariant) >= 2 && !isDuplicate(tempMap[routeID].Variants, currentVariant) {
 				tempMap[routeID].Variants = append(tempMap[routeID].Variants, currentVariant)
 			}
 		}
 	}
 
-	// 3. Conversion de la Map en tableau plat []OptimizedLine
+	// 3. Conversion en tableau final
 	var final []OptimizedLine
 	for _, v := range tempMap {
 		final = append(final, *v)
 	}
 
-	// Sauvegarde finale
+	// Sauvegarde
 	data, _ := json.MarshalIndent(final, "", "  ")
 	os.WriteFile("optimized_routes.json", data, 0644)
-	fmt.Printf("✅ %d lignes traitées et sauvegardées dans optimized_routes.json\n", len(final))
+	fmt.Printf("✅ %d lignes traitées avec succès.\n", len(final))
 }
 
 func isDuplicate(existing [][]string, newVar []string) bool {
