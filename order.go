@@ -15,6 +15,8 @@ import (
 const (
 	StopsLignesURL = "https://data.iledefrance-mobilites.fr/api/explore/v2.1/catalog/datasets/arrets-lignes/exports/json?limit=-1"
 	TracesURL      = "https://data.iledefrance-mobilites.fr/api/explore/v2.1/catalog/datasets/traces-des-lignes-de-transport-en-commun-idfm/exports/json?limit=-1"
+	RoutesFile     = "optimized_routes.json"
+	RoutesBackup   = "optimized_routes.backup.json"
 )
 
 type Variant struct {
@@ -29,13 +31,22 @@ type OptimizedLine struct {
 }
 
 func FetchRoutes() {
-	// 1. Indexation des Arrêts
-	fmt.Println("⏳ Récupération des arrêts-lignes...")
-	respStops, _ := http.Get(StopsLignesURL)
+	// Préparation du backup avant de commencer
+	prepareBackupOrder(RoutesFile, RoutesBackup)
+
+	fmt.Println("⏳ Récupération des arrêts-lignes depuis IDFM...")
+	respStops, err := http.Get(StopsLignesURL)
+	if err != nil {
+		checkErrOrder(err, RoutesFile, RoutesBackup)
+		return
+	}
 	defer respStops.Body.Close()
 
 	var rawStops []map[string]interface{}
-	json.NewDecoder(respStops.Body).Decode(&rawStops)
+	if err := json.NewDecoder(respStops.Body).Decode(&rawStops); err != nil {
+		checkErrOrder(err, RoutesFile, RoutesBackup)
+		return
+	}
 
 	stopLookup := make(map[string]string)
 	for _, s := range rawStops {
@@ -56,15 +67,20 @@ func FetchRoutes() {
 	}
 	fmt.Printf("✅ %d arrêts indexés\n", len(stopLookup))
 
-	// 2. Récupération des Tracés
-	fmt.Println("⏳ Récupération des tracés...")
-	respTraces, _ := http.Get(TracesURL)
+	fmt.Println("⏳ Récupération des tracés depuis IDFM...")
+	respTraces, err := http.Get(TracesURL)
+	if err != nil {
+		checkErrOrder(err, RoutesFile, RoutesBackup)
+		return
+	}
 	defer respTraces.Body.Close()
 
 	var rawTraces []map[string]interface{}
-	json.NewDecoder(respTraces.Body).Decode(&rawTraces)
+	if err := json.NewDecoder(respTraces.Body).Decode(&rawTraces); err != nil {
+		checkErrOrder(err, RoutesFile, RoutesBackup)
+		return
+	}
 
-	// Map temporaire pour stocker TOUTES les séquences brutes par ligne
 	rawVariantsMap := make(map[string][][]string)
 	lineNames := make(map[string]string)
 
@@ -104,16 +120,12 @@ func FetchRoutes() {
 		}
 	}
 
-	// 3. Filtrage et Nettoyage (Sub-sequences)
 	var finalData []OptimizedLine
-
 	for routeID, variants := range rawVariantsMap {
-		// A. Trier par longueur décroissante (les plus longs d'abord)
 		sort.Slice(variants, func(i, j int) bool {
 			return len(variants[i]) > len(variants[j])
 		})
 
-		// B. Ne garder que les séquences qui ne sont pas des sous-parties d'une autre
 		var filtered [][]string
 		for _, v := range variants {
 			isSub := false
@@ -128,7 +140,6 @@ func FetchRoutes() {
 			}
 		}
 
-		// C. Créer les objets variants avec ID unique
 		var variantObjects []Variant
 		for i, v := range filtered {
 			variantObjects = append(variantObjects, Variant{
@@ -144,13 +155,36 @@ func FetchRoutes() {
 		})
 	}
 
-	// 4. Sauvegarde
 	data, _ := json.MarshalIndent(finalData, "", "  ")
-	os.WriteFile("optimized_routes.json", data, 0644)
-	fmt.Printf("✅ %d lignes traitées. Fichier généré : optimized_routes.json\n", len(finalData))
+	if err := os.WriteFile(RoutesFile, data, 0644); err != nil {
+		checkErrOrder(err, RoutesFile, RoutesBackup)
+		return
+	}
+	fmt.Printf("✅ %d lignes traitées. Fichier généré : %s\n", len(finalData), RoutesFile)
 }
 
-// isSubSequence vérifie si 'sub' est contenue dans 'main'
+// --- Fonctions Utilitaires Système (Backup & Error Handling) ---
+
+func prepareBackupOrder(file string, backup string) {
+	if _, err := os.Stat(file); err == nil {
+		input, _ := os.ReadFile(file)
+		os.WriteFile(backup, input, 0644)
+	}
+}
+
+func checkErrOrder(err error, file string, backup string) {
+	fmt.Printf("❌ Erreur : %v\n", err)
+	if _, statErr := os.Stat(backup); statErr == nil {
+		fmt.Println("🔄 Restauration du fichier depuis le backup...")
+		input, _ := os.ReadFile(backup)
+		os.WriteFile(file, input, 0644)
+	} else {
+		fmt.Println("⚠️ Aucun backup disponible pour restauration.")
+	}
+}
+
+// --- Fonctions de Logique Métier (Filtrage) ---
+
 func isSubSequence(sub []string, main []string) bool {
 	if len(sub) >= len(main) {
 		return false
@@ -160,7 +194,6 @@ func isSubSequence(sub []string, main []string) bool {
 	return strings.Contains(mStr, sStr)
 }
 
-// isDuplicate évite les copies exactes
 func isDuplicate(existing [][]string, newVar []string) bool {
 	newHash := hashSequence(newVar)
 	for _, e := range existing {
