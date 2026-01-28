@@ -56,8 +56,13 @@ func FetchLines() {
 		tMode := fmt.Sprint(item["transportmode"])
 		tSubMode := fmt.Sprint(item["transportsubmode"])
 
+		rawID := fmt.Sprint(item["id_line"])
+		if rawID == "<nil>" || rawID == "" {
+			continue
+		}
+
 		line := LineData{
-			ID:              fmt.Sprint(item["id_line"]),
+			ID:              "IDFM:" + rawID,
 			Name:            fmt.Sprint(item["name_line"]),
 			Mode:            detectMode(tMode, tSubMode),
 			BackgroundColor: fmt.Sprint(item["colourweb_hexa"]),
