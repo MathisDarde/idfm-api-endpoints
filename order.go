@@ -81,10 +81,12 @@ func FetchRoutes() {
 	lineNames := make(map[string]string)
 
 	for _, item := range rawTraces {
-		routeID := fmt.Sprint(item["id_ilico"])
-		if routeID == "" || routeID == "<nil>" {
+		rawID := fmt.Sprint(item["id_ilico"])
+		if rawID == "" || rawID == "<nil>" {
 			continue
 		}
+
+		routeID := "IDFM:" + rawID
 
 		lineNames[routeID] = fmt.Sprint(item["route_short_name"])
 
