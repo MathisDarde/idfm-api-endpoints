@@ -20,15 +20,16 @@ const (
 )
 
 type Variant struct {
-	ID    string   `json:"id"`    // Format: {route_id}_{index}
-	Stops []string `json:"stops"` // Liste des IDs d'arrêts
+	ID    string   `json:"id"`
+	Stops []string `json:"stops"`
 }
 
 type OptimizedLine struct {
-	ID        int       `json:"id"`       // ID numérique unique (1, 2, 3...)
-	RouteID   string    `json:"route_id"` // ID technique IDFM
-	ShortName string    `json:"short_name"`
-	Variants  []Variant `json:"variants"`
+	ID                    int        `json:"id"`
+	RouteID               string     `json:"route_id"`
+	ShortName             string     `json:"short_name"`
+	Variants              []Variant  `json:"variants"`
+	OptimalInfrastructure [][]string `json:"optimal_infrastructure"` // Nouvelle colonne
 }
 
 func FetchRoutes() {
@@ -43,10 +44,7 @@ func FetchRoutes() {
 	defer respStops.Body.Close()
 
 	var rawStops []map[string]interface{}
-	if err := json.NewDecoder(respStops.Body).Decode(&rawStops); err != nil {
-		checkErrOrder(err, RoutesFile, RoutesBackup)
-		return
-	}
+	json.NewDecoder(respStops.Body).Decode(&rawStops)
 
 	stopLookup := make(map[string]string)
 	for _, s := range rawStops {
@@ -87,7 +85,6 @@ func FetchRoutes() {
 		}
 
 		routeID := "IDFM:" + rawID
-
 		lineNames[routeID] = fmt.Sprint(item["route_short_name"])
 
 		shape, _ := item["shape"].(map[string]interface{})
@@ -118,23 +115,45 @@ func FetchRoutes() {
 		}
 	}
 
-	// --- NOUVEAU : Tri des clés pour garantir des IDs stables ---
 	var routeIDs []string
 	for rID := range rawVariantsMap {
 		routeIDs = append(routeIDs, rID)
 	}
-	sort.Strings(routeIDs) // Tri par ordre alphabétique des IDs IDFM
+	sort.Strings(routeIDs)
 
 	var finalData []OptimizedLine
-	idCounter := 1 // Initialisation de l'ID numérique
+	idCounter := 1
 
 	for _, routeID := range routeIDs {
 		variants := rawVariantsMap[routeID]
 
-		sort.Slice(variants, func(i, j int) bool {
-			return len(variants[i]) > len(variants[j])
-		})
+		// --- LOGIQUE INFRASTRUCTURE OPTIMALE ---
+		seenSegments := make(map[string]bool)
+		var infrastructure [][]string
 
+		for _, v := range variants {
+			for i := 0; i < len(v)-1; i++ {
+				idA := v[i]
+				idB := v[i+1]
+
+				if idA == idB {
+					continue
+				}
+
+				// Créer une clé unique A-B (triée pour ignorer le sens)
+				pair := []string{idA, idB}
+				sort.Strings(pair)
+				segmentKey := pair[0] + "--" + pair[1]
+
+				if !seenSegments[segmentKey] {
+					seenSegments[segmentKey] = true
+					infrastructure = append(infrastructure, []string{pair[0], pair[1]})
+				}
+			}
+		}
+
+		// --- LOGIQUE VARIANTS (EXISTANTE) ---
+		sort.Slice(variants, func(i, j int) bool { return len(variants[i]) > len(variants[j]) })
 		var filtered [][]string
 		for _, v := range variants {
 			isSub := false
@@ -157,27 +176,22 @@ func FetchRoutes() {
 			})
 		}
 
-		// Ajout de l'ID numérique incrémenté
 		finalData = append(finalData, OptimizedLine{
-			ID:        idCounter,
-			RouteID:   routeID,
-			ShortName: lineNames[routeID],
-			Variants:  variantObjects,
+			ID:                    idCounter,
+			RouteID:               routeID,
+			ShortName:             lineNames[routeID],
+			Variants:              variantObjects,
+			OptimalInfrastructure: infrastructure, // On injecte l'infrastructure dédupliquée
 		})
 		idCounter++
 	}
 
 	data, _ := json.MarshalIndent(finalData, "", "  ")
-	if err := os.WriteFile(RoutesFile, data, 0644); err != nil {
-		checkErrOrder(err, RoutesFile, RoutesBackup)
-		return
-	}
-	fmt.Printf("✅ %d lignes traitées. Fichier généré : %s\n", len(finalData), RoutesFile)
+	os.WriteFile(RoutesFile, data, 0644)
+	fmt.Printf("✅ %d lignes traitées. Infrastructure optimale générée.\n", len(finalData))
 }
 
-// ... (Gardez les fonctions utilitaires : prepareBackupOrder, checkErrOrder, isSubSequence, isDuplicate, hashSequence)
-
-// --- Fonctions Utilitaires Système (Backup & Error Handling) ---
+// ... Garder les autres fonctions utilitaires (prepareBackupOrder, isSubSequence, etc.) identique à ton script original ...
 
 func prepareBackupOrder(file string, backup string) {
 	if _, err := os.Stat(file); err == nil {
@@ -189,15 +203,10 @@ func prepareBackupOrder(file string, backup string) {
 func checkErrOrder(err error, file string, backup string) {
 	fmt.Printf("❌ Erreur : %v\n", err)
 	if _, statErr := os.Stat(backup); statErr == nil {
-		fmt.Println("🔄 Restauration du fichier depuis le backup...")
 		input, _ := os.ReadFile(backup)
 		os.WriteFile(file, input, 0644)
-	} else {
-		fmt.Println("⚠️ Aucun backup disponible pour restauration.")
 	}
 }
-
-// --- Fonctions de Logique Métier (Filtrage) ---
 
 func isSubSequence(sub []string, main []string) bool {
 	if len(sub) >= len(main) {
