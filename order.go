@@ -29,7 +29,7 @@ type OptimizedLine struct {
 	RouteID               string     `json:"route_id"`
 	ShortName             string     `json:"short_name"`
 	Variants              []Variant  `json:"variants"`
-	OptimalInfrastructure [][]string `json:"optimal_infrastructure"` // Nouvelle colonne
+	OptimalInfrastructure [][]string `json:"optimal_infrastructure"`
 }
 
 func FetchRoutes() {
@@ -127,28 +127,52 @@ func FetchRoutes() {
 	for _, routeID := range routeIDs {
 		variants := rawVariantsMap[routeID]
 
-		// --- LOGIQUE INFRASTRUCTURE OPTIMALE ---
-		seenSegments := make(map[string]bool)
-		var infrastructure [][]string
+		// --- LOGIQUE INFRASTRUCTURE OPTIMALE (CORRIGÉE) ---
 
+		// 1. Collecter tous les segments uniques possibles
+		allPossibleSegments := make(map[string][]string)
 		for _, v := range variants {
 			for i := 0; i < len(v)-1; i++ {
-				idA := v[i]
-				idB := v[i+1]
-
-				if idA == idB {
-					continue
-				}
-
-				// Créer une clé unique A-B (triée pour ignorer le sens)
-				pair := []string{idA, idB}
+				pair := []string{v[i], v[i+1]}
 				sort.Strings(pair)
-				segmentKey := pair[0] + "--" + pair[1]
+				key := pair[0] + "--" + pair[1]
+				allPossibleSegments[key] = []string{pair[0], pair[1]}
+			}
+		}
 
-				if !seenSegments[segmentKey] {
-					seenSegments[segmentKey] = true
-					infrastructure = append(infrastructure, []string{pair[0], pair[1]})
+		// 2. Filtre anti-saut : supprimer les segments qui "sautent" une gare existante dans un autre variant
+		var infrastructure [][]string
+		for _, pair := range allPossibleSegments {
+			idA, idB := pair[0], pair[1]
+			isJump := false
+
+			for _, v := range variants {
+				idxA, idxB := -1, -1
+				for i, stopID := range v {
+					if stopID == idA {
+						idxA = i
+					}
+					if stopID == idB {
+						idxB = i
+					}
 				}
+
+				// Si les deux stations sont dans ce variant mais ne sont PAS consécutives
+				// alors le lien direct entre les deux est un "saut express"
+				if idxA != -1 && idxB != -1 {
+					dist := idxA - idxB
+					if dist < 0 {
+						dist = -dist
+					}
+					if dist > 1 {
+						isJump = true
+						break
+					}
+				}
+			}
+
+			if !isJump {
+				infrastructure = append(infrastructure, pair)
 			}
 		}
 
@@ -181,17 +205,17 @@ func FetchRoutes() {
 			RouteID:               routeID,
 			ShortName:             lineNames[routeID],
 			Variants:              variantObjects,
-			OptimalInfrastructure: infrastructure, // On injecte l'infrastructure dédupliquée
+			OptimalInfrastructure: infrastructure,
 		})
 		idCounter++
 	}
 
 	data, _ := json.MarshalIndent(finalData, "", "  ")
 	os.WriteFile(RoutesFile, data, 0644)
-	fmt.Printf("✅ %d lignes traitées. Infrastructure optimale générée.\n", len(finalData))
+	fmt.Printf("✅ %d lignes traitées. Infrastructure adjacente générée.\n", len(finalData))
 }
 
-// ... Garder les autres fonctions utilitaires (prepareBackupOrder, isSubSequence, etc.) identique à ton script original ...
+// ... (Gardez les fonctions utilitaires preparesBackupOrder, checkErrOrder, etc. à l'identique)
 
 func prepareBackupOrder(file string, backup string) {
 	if _, err := os.Stat(file); err == nil {
