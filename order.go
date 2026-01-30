@@ -141,7 +141,8 @@ func FetchRoutes() {
 		}
 
 		// 2. Filtre anti-saut : supprimer les segments qui "sautent" une gare existante dans un autre variant
-		var infrastructure [][]string
+		infrastructureMap := make(map[string][]string)
+
 		for _, pair := range allPossibleSegments {
 			idA, idB := pair[0], pair[1]
 			isJump := false
@@ -157,8 +158,6 @@ func FetchRoutes() {
 					}
 				}
 
-				// Si les deux stations sont dans ce variant mais ne sont PAS consécutives
-				// alors le lien direct entre les deux est un "saut express"
 				if idxA != -1 && idxB != -1 {
 					dist := idxA - idxB
 					if dist < 0 {
@@ -172,8 +171,15 @@ func FetchRoutes() {
 			}
 
 			if !isJump {
-				infrastructure = append(infrastructure, pair)
+				// 🔒 DÉDUPLICATION FINALE
+				key := idA + "--" + idB
+				infrastructureMap[key] = []string{idA, idB}
 			}
+		}
+
+		var infrastructure [][]string
+		for _, seg := range infrastructureMap {
+			infrastructure = append(infrastructure, seg)
 		}
 
 		// --- LOGIQUE VARIANTS (EXISTANTE) ---
