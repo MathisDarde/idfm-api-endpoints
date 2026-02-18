@@ -2674,13 +2674,6 @@
     "text_color": "000000"
   },
   {
-    "id": "IDFM:C02613",
-    "name": "TàD Balade en Provinois",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
     "id": "IDFM:C02617",
     "name": "3102",
     "mode": "bus",
@@ -2965,6 +2958,944 @@
     "name": "L10 : FRANCONVILLE Gare de Franconville Le Plessis Bouchard - LE PLESSIS BOUCHARD Gare de Franconville Le Plessis Bouchard",
     "mode": "bus",
     "background_color": "87d3df",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02006",
+    "name": "30-49",
+    "mode": "bus",
+    "background_color": "3a338a",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02007",
+    "name": "168",
+    "mode": "bus",
+    "background_color": "82c8e6",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02020",
+    "name": "4307",
+    "mode": "bus",
+    "background_color": "ff5a00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02030",
+    "name": "Soir Louvres",
+    "mode": "bus",
+    "background_color": "662583",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02033",
+    "name": "1349",
+    "mode": "bus",
+    "background_color": "ff5a00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02035",
+    "name": "2401",
+    "mode": "bus",
+    "background_color": "ff1400",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02040",
+    "name": "CitéVal Cormeilles-en-Parisis",
+    "mode": "bus",
+    "background_color": "e5377d",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02041",
+    "name": "CitéVal Franconville",
+    "mode": "bus",
+    "background_color": "9fc005",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02068",
+    "name": "4418",
+    "mode": "bus",
+    "background_color": "e0b03b",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02071",
+    "name": "2456",
+    "mode": "bus",
+    "background_color": "00a092",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02074",
+    "name": "2462",
+    "mode": "bus",
+    "background_color": "6e491e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02077",
+    "name": "2419",
+    "mode": "bus",
+    "background_color": "a50034",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02079",
+    "name": "2473",
+    "mode": "bus",
+    "background_color": "dc9600",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02098",
+    "name": "2455",
+    "mode": "bus",
+    "background_color": "00a092",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02107",
+    "name": "3137",
+    "mode": "bus",
+    "background_color": "f59eb3",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02112",
+    "name": "444",
+    "mode": "bus",
+    "background_color": "d2d200",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02124",
+    "name": "3148",
+    "mode": "bus",
+    "background_color": "ed1c2a",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02135",
+    "name": "7s",
+    "mode": "bus",
+    "background_color": "97bf35",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02147",
+    "name": "S7",
+    "mode": "bus",
+    "background_color": "8cad08",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02169",
+    "name": "5114",
+    "mode": "bus",
+    "background_color": "d282be",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02175",
+    "name": "5187",
+    "mode": "bus",
+    "background_color": "82dc73",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02186",
+    "name": "4463",
+    "mode": "bus",
+    "background_color": "f28e42",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02191",
+    "name": "3778",
+    "mode": "bus",
+    "background_color": "00a092",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02202",
+    "name": "3411",
+    "mode": "bus",
+    "background_color": "640082",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02204",
+    "name": "7802",
+    "mode": "bus",
+    "background_color": "3c91dc",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02217",
+    "name": "5124",
+    "mode": "bus",
+    "background_color": "d2d200",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02218",
+    "name": "5125",
+    "mode": "bus",
+    "background_color": "82c8e6",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02220",
+    "name": "Soir Mennecy",
+    "mode": "bus",
+    "background_color": "640082",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02222",
+    "name": "6563",
+    "mode": "bus",
+    "background_color": "ff5a00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02230",
+    "name": "2326",
+    "mode": "bus",
+    "background_color": "640082",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02233",
+    "name": "2348",
+    "mode": "bus",
+    "background_color": "d3c90d",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02237",
+    "name": "2325",
+    "mode": "bus",
+    "background_color": "ff9900",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02243",
+    "name": "25",
+    "mode": "bus",
+    "background_color": "ff1400",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02246",
+    "name": "71",
+    "mode": "bus",
+    "background_color": "6e491e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02265",
+    "name": "T'bus 1",
+    "mode": "bus",
+    "background_color": "e3051b",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02267",
+    "name": "T'bus 3",
+    "mode": "bus",
+    "background_color": "0064b0",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02269",
+    "name": "Express A14 Chambourcy",
+    "mode": "bus",
+    "background_color": "3c91dc",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02270",
+    "name": "4434",
+    "mode": "bus",
+    "background_color": "ceadd2",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02277",
+    "name": "3424",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02284",
+    "name": "3658",
+    "mode": "bus",
+    "background_color": "0055c8",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02286",
+    "name": "6214",
+    "mode": "bus",
+    "background_color": "3c91dc",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02290",
+    "name": "3426",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02291",
+    "name": "TàD 2429",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02294",
+    "name": "3216",
+    "mode": "bus",
+    "background_color": "a0006e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02295",
+    "name": "TàD Nangis / Saint-Just",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02300",
+    "name": "469",
+    "mode": "bus",
+    "background_color": "f9bd1b",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02344",
+    "name": "T13",
+    "mode": "tramway",
+    "background_color": "8d653d",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02355",
+    "name": "4618",
+    "mode": "bus",
+    "background_color": "cfc83b",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02363",
+    "name": "Corbeil - La Ferté Alais",
+    "mode": "bus",
+    "background_color": "aaaaaa",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02364",
+    "name": "Corbeil - Melun",
+    "mode": "bus",
+    "background_color": "aaaaaa",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02365",
+    "name": "2405",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02371",
+    "name": "TER Normandie Bus",
+    "mode": "bus",
+    "background_color": "aaaaaa",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02385",
+    "name": "Remplacement RER B",
+    "mode": "bus",
+    "background_color": "5091cb",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02393",
+    "name": "4345",
+    "mode": "bus",
+    "background_color": "d282be",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02398",
+    "name": "4577",
+    "mode": "bus",
+    "background_color": "82c8e6",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02404",
+    "name": "Caméléon T1",
+    "mode": "bus",
+    "background_color": "003ca6",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02410",
+    "name": "Caméléon T7",
+    "mode": "bus",
+    "background_color": "704b1c",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02411",
+    "name": "Caméléon T8",
+    "mode": "bus",
+    "background_color": "837902",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02413",
+    "name": "1143",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02422",
+    "name": "TàD Eaubonne Domont",
+    "mode": "bus",
+    "background_color": "fecb00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02423",
+    "name": "M",
+    "mode": "bus",
+    "background_color": "80ff00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02430",
+    "name": "448",
+    "mode": "bus",
+    "background_color": "0055c8",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02439",
+    "name": "K",
+    "mode": "bus",
+    "background_color": "41a776",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02449",
+    "name": "4451",
+    "mode": "bus",
+    "background_color": "98d4e2",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02450",
+    "name": "4452",
+    "mode": "bus",
+    "background_color": "006db8",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02459",
+    "name": "382",
+    "mode": "bus",
+    "background_color": "8d653d",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02460",
+    "name": "TàD 4597",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02463",
+    "name": "1527",
+    "mode": "bus",
+    "background_color": "9b9842",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02469",
+    "name": "T13",
+    "mode": "bus",
+    "background_color": "8d653d",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02470",
+    "name": "4411",
+    "mode": "bus",
+    "background_color": "006db8",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02472",
+    "name": "4414",
+    "mode": "bus",
+    "background_color": "00b397",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02479",
+    "name": "5441",
+    "mode": "bus",
+    "background_color": "cec73d",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02481",
+    "name": "5322",
+    "mode": "bus",
+    "background_color": "ffcd03",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02497",
+    "name": "E",
+    "mode": "bus",
+    "background_color": "8bc63f",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02499",
+    "name": "Z",
+    "mode": "bus",
+    "background_color": "f3be27",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02512",
+    "name": "Bus Remplacement Métro 9",
+    "mode": "bus",
+    "background_color": "cec73d",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02524",
+    "name": "TàD 3144",
+    "mode": "bus",
+    "background_color": "ffcd03",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02532",
+    "name": "Bus Remplacement Métro 5",
+    "mode": "bus",
+    "background_color": "ff7e2e",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02537",
+    "name": "6515",
+    "mode": "bus",
+    "background_color": "6e491e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02542",
+    "name": "6529",
+    "mode": "bus",
+    "background_color": "00643c",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02544",
+    "name": "6592",
+    "mode": "bus",
+    "background_color": "6e6e00",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02554",
+    "name": "6558",
+    "mode": "bus",
+    "background_color": "6e491e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02563",
+    "name": "6574",
+    "mode": "bus",
+    "background_color": "00a092",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02564",
+    "name": "6575",
+    "mode": "bus",
+    "background_color": "d282be",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02565",
+    "name": "6501",
+    "mode": "bus",
+    "background_color": "ff1400",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02568",
+    "name": "6506",
+    "mode": "bus",
+    "background_color": "d282be",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02570",
+    "name": "6513",
+    "mode": "bus",
+    "background_color": "6e6e00",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02575",
+    "name": "TàD Montereau Nord",
+    "mode": "bus",
+    "background_color": "ffcd03",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02585",
+    "name": "Soir Nangis",
+    "mode": "bus",
+    "background_color": "640082",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02587",
+    "name": "TàD Nord Meulan - Les Mureaux",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02589",
+    "name": "Soir Poissy",
+    "mode": "bus",
+    "background_color": "640082",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02597",
+    "name": "T12",
+    "mode": "bus",
+    "background_color": "a50034",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02599",
+    "name": "4318",
+    "mode": "bus",
+    "background_color": "0055c8",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02605",
+    "name": "Soir Gonesse",
+    "mode": "bus",
+    "background_color": "662583",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02608",
+    "name": "4348",
+    "mode": "bus",
+    "background_color": "82c8e6",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02612",
+    "name": "3452",
+    "mode": "bus",
+    "background_color": "d282be",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02620",
+    "name": "3141",
+    "mode": "bus",
+    "background_color": "87d3df",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02627",
+    "name": "Soir Les Mureaux",
+    "mode": "bus",
+    "background_color": "640082",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02636",
+    "name": "Tzen4 (ex 4206)",
+    "mode": "bus",
+    "background_color": "d2d200",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02641",
+    "name": "Soir Rambouillet",
+    "mode": "bus",
+    "background_color": "640082",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02662",
+    "name": "4513",
+    "mode": "bus",
+    "background_color": "a50034",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02664",
+    "name": "Filéo Compans",
+    "mode": "bus",
+    "background_color": "aaaaaa",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02670",
+    "name": "2282",
+    "mode": "bus",
+    "background_color": "6e491e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02671",
+    "name": "2283",
+    "mode": "bus",
+    "background_color": "82c8e6",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02672",
+    "name": "2284",
+    "mode": "bus",
+    "background_color": "d282be",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02673",
+    "name": "2254",
+    "mode": "bus",
+    "background_color": "d2d200",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02683",
+    "name": "60",
+    "mode": "bus",
+    "background_color": "00643c",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02685",
+    "name": "62",
+    "mode": "bus",
+    "background_color": "0055c8",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02686",
+    "name": "63",
+    "mode": "bus",
+    "background_color": "6e491e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02689",
+    "name": "Soir Bussy-st-Georges",
+    "mode": "bus",
+    "background_color": "652c8f",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02693",
+    "name": "2151",
+    "mode": "bus",
+    "background_color": "ff5a00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02695",
+    "name": "2153",
+    "mode": "bus",
+    "background_color": "dc9600",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02702",
+    "name": "2161",
+    "mode": "bus",
+    "background_color": "0055c8",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02713",
+    "name": "245",
+    "mode": "bus",
+    "background_color": "b6134c",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02721",
+    "name": "3418",
+    "mode": "bus",
+    "background_color": "00643c",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02723",
+    "name": "A04 Paris La Villette",
+    "mode": "bus",
+    "background_color": "003da5",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02730",
+    "name": "26",
+    "mode": "bus",
+    "background_color": "00a092",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02733",
+    "name": "Remplacement Tram T14",
+    "mode": "bus",
+    "background_color": "00a092",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02737",
+    "name": "4270",
+    "mode": "bus",
+    "background_color": "82c8e6",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02738",
+    "name": "4278",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02768",
+    "name": "Soir Montgeron",
+    "mode": "bus",
+    "background_color": "640082",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02772",
+    "name": "Soir Quincy-sous-Sénart",
+    "mode": "bus",
+    "background_color": "640082",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02776",
+    "name": "TAD Bois le Roi",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02781",
+    "name": "TàD Boissise-le-Roi - Pringy",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02787",
+    "name": "TàD Ourcq Est",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02788",
+    "name": "TàD Dimanche",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02799",
+    "name": "6550",
+    "mode": "bus",
+    "background_color": "640082",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02801",
+    "name": "6578",
+    "mode": "bus",
+    "background_color": "ff5a00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02812",
+    "name": "4671",
+    "mode": "bus",
+    "background_color": "ff1400",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02815",
+    "name": "4672",
+    "mode": "bus",
+    "background_color": "00a092",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02818",
+    "name": "4652",
+    "mode": "bus",
+    "background_color": "00643c",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02821",
+    "name": "TàD 4306",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02834",
+    "name": "240",
+    "mode": "bus",
+    "background_color": "b90845",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02844",
+    "name": "L2 : BESSANCOURT Gare de Bessancourt - HERBLAY Buttes Blanche",
+    "mode": "bus",
+    "background_color": "8e6539",
     "text_color": "000000"
   },
   {
@@ -4732,6 +5663,13 @@
     "text_color": "ffffff"
   },
   {
+    "id": "IDFM:C01616",
+    "name": "4201",
+    "mode": "bus",
+    "background_color": "d282be",
+    "text_color": "000000"
+  },
+  {
     "id": "IDFM:C01633",
     "name": "N132",
     "mode": "bus",
@@ -5068,941 +6006,3153 @@
     "text_color": "000000"
   },
   {
-    "id": "IDFM:C02006",
-    "name": "30-49",
+    "id": "IDFM:C00003",
+    "name": "Licorne",
     "mode": "bus",
-    "background_color": "3a338a",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02007",
-    "name": "168",
-    "mode": "bus",
-    "background_color": "82c8e6",
+    "background_color": "ff82b4",
     "text_color": "000000"
   },
   {
-    "id": "IDFM:C02020",
-    "name": "4307",
-    "mode": "bus",
-    "background_color": "ff5a00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02030",
-    "name": "Soir Louvres",
-    "mode": "bus",
-    "background_color": "662583",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02033",
-    "name": "1349",
-    "mode": "bus",
-    "background_color": "ff5a00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02035",
-    "name": "2401",
-    "mode": "bus",
-    "background_color": "ff1400",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02040",
-    "name": "CitéVal Cormeilles-en-Parisis",
-    "mode": "bus",
-    "background_color": "e5377d",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02041",
-    "name": "CitéVal Franconville",
-    "mode": "bus",
-    "background_color": "9fc005",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02068",
-    "name": "4418",
-    "mode": "bus",
-    "background_color": "e0b03b",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02071",
-    "name": "2456",
-    "mode": "bus",
-    "background_color": "00a092",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02074",
-    "name": "2462",
-    "mode": "bus",
-    "background_color": "6e491e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02077",
-    "name": "2419",
-    "mode": "bus",
-    "background_color": "a50034",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02079",
-    "name": "2473",
-    "mode": "bus",
-    "background_color": "dc9600",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02098",
-    "name": "2455",
-    "mode": "bus",
-    "background_color": "00a092",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02107",
-    "name": "3137",
-    "mode": "bus",
-    "background_color": "f59eb3",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02112",
-    "name": "444",
-    "mode": "bus",
-    "background_color": "d2d200",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02124",
-    "name": "3148",
-    "mode": "bus",
-    "background_color": "ed1c2a",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02135",
-    "name": "7s",
-    "mode": "bus",
-    "background_color": "97bf35",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02147",
-    "name": "S7",
-    "mode": "bus",
-    "background_color": "8cad08",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02169",
-    "name": "5114",
-    "mode": "bus",
-    "background_color": "d282be",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02175",
-    "name": "5187",
+    "id": "IDFM:C00007",
+    "name": "282",
     "mode": "bus",
     "background_color": "82dc73",
     "text_color": "000000"
   },
   {
-    "id": "IDFM:C02186",
-    "name": "4463",
+    "id": "IDFM:C00014",
+    "name": "3110",
     "mode": "bus",
-    "background_color": "f28e42",
+    "background_color": "e1be00",
     "text_color": "000000"
   },
   {
-    "id": "IDFM:C02191",
-    "name": "3778",
-    "mode": "bus",
-    "background_color": "00a092",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02202",
-    "name": "3411",
-    "mode": "bus",
-    "background_color": "640082",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02204",
-    "name": "7802",
-    "mode": "bus",
-    "background_color": "3c91dc",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02217",
-    "name": "5124",
-    "mode": "bus",
-    "background_color": "d2d200",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02218",
-    "name": "5125",
-    "mode": "bus",
-    "background_color": "82c8e6",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02220",
-    "name": "Soir Mennecy",
-    "mode": "bus",
-    "background_color": "640082",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02222",
-    "name": "6563",
+    "id": "IDFM:C00016",
+    "name": "3114",
     "mode": "bus",
     "background_color": "ff5a00",
     "text_color": "000000"
   },
   {
-    "id": "IDFM:C02230",
-    "name": "2326",
-    "mode": "bus",
-    "background_color": "640082",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02233",
-    "name": "2348",
-    "mode": "bus",
-    "background_color": "d3c90d",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02237",
-    "name": "2325",
-    "mode": "bus",
-    "background_color": "ff9900",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02243",
-    "name": "25",
-    "mode": "bus",
-    "background_color": "ff1400",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02246",
-    "name": "71",
+    "id": "IDFM:C00020",
+    "name": "3115",
     "mode": "bus",
     "background_color": "6e491e",
     "text_color": "ffffff"
   },
   {
-    "id": "IDFM:C02265",
-    "name": "T'bus 1",
+    "id": "IDFM:C00030",
+    "name": "E",
     "mode": "bus",
-    "background_color": "e3051b",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02267",
-    "name": "T'bus 3",
-    "mode": "bus",
-    "background_color": "0064b0",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02269",
-    "name": "Express A14 Chambourcy",
-    "mode": "bus",
-    "background_color": "3c91dc",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02270",
-    "name": "4434",
-    "mode": "bus",
-    "background_color": "ceadd2",
+    "background_color": "d896c1",
     "text_color": "000000"
   },
   {
-    "id": "IDFM:C02277",
-    "name": "3424",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02284",
-    "name": "3658",
+    "id": "IDFM:C00043",
+    "name": "6124",
     "mode": "bus",
     "background_color": "0055c8",
     "text_color": "ffffff"
   },
   {
-    "id": "IDFM:C02286",
-    "name": "6214",
+    "id": "IDFM:C00054",
+    "name": "5332",
     "mode": "bus",
-    "background_color": "3c91dc",
+    "background_color": "f78f4b",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00075",
+    "name": "4614",
+    "mode": "bus",
+    "background_color": "54aee3",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00098",
+    "name": "4441",
+    "mode": "bus",
+    "background_color": "8d5e2a",
     "text_color": "ffffff"
   },
   {
-    "id": "IDFM:C02290",
-    "name": "3426",
+    "id": "IDFM:C00103",
+    "name": "4510",
     "mode": "bus",
-    "background_color": "ffbe00",
+    "background_color": "d2d200",
     "text_color": "000000"
   },
   {
-    "id": "IDFM:C02291",
-    "name": "TàD 2429",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02294",
-    "name": "3216",
+    "id": "IDFM:C00104",
+    "name": "4326",
     "mode": "bus",
     "background_color": "a0006e",
     "text_color": "ffffff"
   },
   {
-    "id": "IDFM:C02295",
-    "name": "TàD Nangis / Saint-Just",
+    "id": "IDFM:C00124",
+    "name": "5270",
     "mode": "bus",
-    "background_color": "ffbe00",
+    "background_color": "f78f4b",
     "text_color": "000000"
   },
   {
-    "id": "IDFM:C02300",
-    "name": "469",
-    "mode": "bus",
-    "background_color": "f9bd1b",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02344",
-    "name": "T13",
-    "mode": "tramway",
-    "background_color": "8d653d",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02355",
-    "name": "4618",
-    "mode": "bus",
-    "background_color": "cfc83b",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02363",
-    "name": "Corbeil - La Ferté Alais",
-    "mode": "bus",
-    "background_color": "aaaaaa",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02364",
-    "name": "Corbeil - Melun",
-    "mode": "bus",
-    "background_color": "aaaaaa",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02365",
-    "name": "2405",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02371",
-    "name": "TER Normandie Bus",
-    "mode": "bus",
-    "background_color": "aaaaaa",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02385",
-    "name": "Remplacement RER B",
-    "mode": "bus",
-    "background_color": "5091cb",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02393",
-    "name": "4345",
-    "mode": "bus",
-    "background_color": "d282be",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02398",
-    "name": "4577",
+    "id": "IDFM:C00129",
+    "name": "6561",
     "mode": "bus",
     "background_color": "82c8e6",
     "text_color": "000000"
   },
   {
-    "id": "IDFM:C02404",
-    "name": "Caméléon T1",
+    "id": "IDFM:C00130",
+    "name": "6562",
     "mode": "bus",
-    "background_color": "003ca6",
+    "background_color": "a50034",
     "text_color": "ffffff"
   },
   {
-    "id": "IDFM:C02410",
-    "name": "Caméléon T7",
+    "id": "IDFM:C00137",
+    "name": "5211",
     "mode": "bus",
-    "background_color": "704b1c",
+    "background_color": "9b993b",
     "text_color": "ffffff"
   },
   {
-    "id": "IDFM:C02411",
-    "name": "Caméléon T8",
+    "id": "IDFM:C00138",
+    "name": "5212",
     "mode": "bus",
-    "background_color": "837902",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02413",
-    "name": "1143",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02422",
-    "name": "TàD Eaubonne Domont",
-    "mode": "bus",
-    "background_color": "fecb00",
+    "background_color": "cec92b",
     "text_color": "000000"
   },
   {
-    "id": "IDFM:C02423",
-    "name": "M",
+    "id": "IDFM:C00139",
+    "name": "1114",
     "mode": "bus",
-    "background_color": "80ff00",
+    "background_color": "0d99bf",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00158",
+    "name": "R2 Nord",
+    "mode": "bus",
+    "background_color": "9fc5e8",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00163",
+    "name": "5311",
+    "mode": "bus",
+    "background_color": "f59eb3",
     "text_color": "000000"
   },
   {
-    "id": "IDFM:C02430",
-    "name": "448",
+    "id": "IDFM:C00182",
+    "name": "5301",
     "mode": "bus",
-    "background_color": "0055c8",
+    "background_color": "ed1c2a",
     "text_color": "ffffff"
   },
   {
-    "id": "IDFM:C02439",
-    "name": "K",
+    "id": "IDFM:C00189",
+    "name": "1",
     "mode": "bus",
-    "background_color": "41a776",
+    "background_color": "00814f",
     "text_color": "ffffff"
   },
   {
-    "id": "IDFM:C02449",
-    "name": "4451",
+    "id": "IDFM:C00196",
+    "name": "1314",
     "mode": "bus",
-    "background_color": "98d4e2",
+    "background_color": "640082",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00221",
+    "name": "2127",
+    "mode": "bus",
+    "background_color": "ff82b4",
     "text_color": "000000"
   },
   {
-    "id": "IDFM:C02450",
-    "name": "4452",
+    "id": "IDFM:C00223",
+    "name": "EX 93",
     "mode": "bus",
-    "background_color": "006db8",
+    "background_color": "5191cd",
     "text_color": "ffffff"
   },
   {
-    "id": "IDFM:C02459",
-    "name": "382",
+    "id": "IDFM:C00224",
+    "name": "Gbus",
     "mode": "bus",
-    "background_color": "8d653d",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02460",
-    "name": "TàD 4597",
-    "mode": "bus",
-    "background_color": "ffbe00",
+    "background_color": "f4a8bc",
     "text_color": "000000"
   },
   {
-    "id": "IDFM:C02463",
-    "name": "1527",
-    "mode": "bus",
-    "background_color": "9b9842",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02469",
-    "name": "T13",
-    "mode": "bus",
-    "background_color": "8d653d",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02470",
-    "name": "4411",
-    "mode": "bus",
-    "background_color": "006db8",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02472",
-    "name": "4414",
-    "mode": "bus",
-    "background_color": "00b397",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02479",
-    "name": "5441",
-    "mode": "bus",
-    "background_color": "cec73d",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02481",
-    "name": "5322",
-    "mode": "bus",
-    "background_color": "ffcd03",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02497",
-    "name": "E",
-    "mode": "bus",
-    "background_color": "8bc63f",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02499",
-    "name": "Z",
-    "mode": "bus",
-    "background_color": "f3be27",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02512",
-    "name": "Bus Remplacement Métro 9",
-    "mode": "bus",
-    "background_color": "cec73d",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02524",
-    "name": "TàD 3144",
-    "mode": "bus",
-    "background_color": "ffcd03",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02532",
-    "name": "Bus Remplacement Métro 5",
-    "mode": "bus",
-    "background_color": "ff7e2e",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02537",
-    "name": "6515",
+    "id": "IDFM:C00225",
+    "name": "2176",
     "mode": "bus",
     "background_color": "6e491e",
     "text_color": "ffffff"
   },
   {
-    "id": "IDFM:C02542",
-    "name": "6529",
+    "id": "IDFM:C00229",
+    "name": "R2",
     "mode": "bus",
-    "background_color": "00643c",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02544",
-    "name": "6592",
-    "mode": "bus",
-    "background_color": "6e6e00",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02554",
-    "name": "6558",
-    "mode": "bus",
-    "background_color": "6e491e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02563",
-    "name": "6574",
-    "mode": "bus",
-    "background_color": "00a092",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02564",
-    "name": "6575",
-    "mode": "bus",
-    "background_color": "d282be",
+    "background_color": "f28f42",
     "text_color": "000000"
   },
   {
-    "id": "IDFM:C02565",
-    "name": "6501",
+    "id": "IDFM:C00236",
+    "name": "R111",
+    "mode": "bus",
+    "background_color": "f5a05f",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00238",
+    "name": "R113",
+    "mode": "bus",
+    "background_color": "e3051b",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00244",
+    "name": "R109",
+    "mode": "bus",
+    "background_color": "ceacd2",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00245",
+    "name": "2101",
     "mode": "bus",
     "background_color": "ff1400",
     "text_color": "ffffff"
   },
   {
-    "id": "IDFM:C02568",
-    "name": "6506",
+    "id": "IDFM:C00253",
+    "name": "2110",
     "mode": "bus",
     "background_color": "d282be",
     "text_color": "000000"
   },
   {
-    "id": "IDFM:C02570",
-    "name": "6513",
+    "id": "IDFM:C00262",
+    "name": "2377",
     "mode": "bus",
-    "background_color": "6e6e00",
+    "background_color": "00814f",
     "text_color": "ffffff"
   },
   {
-    "id": "IDFM:C02575",
-    "name": "TàD Montereau Nord",
-    "mode": "bus",
-    "background_color": "ffcd03",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02585",
-    "name": "Soir Nangis",
-    "mode": "bus",
-    "background_color": "640082",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02587",
-    "name": "TàD Nord Meulan - Les Mureaux",
+    "id": "IDFM:C00271",
+    "name": "6591",
     "mode": "bus",
     "background_color": "ffbe00",
     "text_color": "000000"
   },
   {
-    "id": "IDFM:C02589",
-    "name": "Soir Poissy",
-    "mode": "bus",
-    "background_color": "640082",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02597",
-    "name": "T12",
-    "mode": "bus",
-    "background_color": "a50034",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02599",
-    "name": "4318",
-    "mode": "bus",
-    "background_color": "0055c8",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02605",
-    "name": "Soir Gonesse",
-    "mode": "bus",
-    "background_color": "662583",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02608",
-    "name": "4348",
-    "mode": "bus",
-    "background_color": "82c8e6",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02612",
-    "name": "3452",
-    "mode": "bus",
-    "background_color": "d282be",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02620",
-    "name": "3141",
-    "mode": "bus",
-    "background_color": "87d3df",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02627",
-    "name": "Soir Les Mureaux",
-    "mode": "bus",
-    "background_color": "640082",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02636",
-    "name": "Tzen4 (ex 4206)",
-    "mode": "bus",
-    "background_color": "d2d200",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02641",
-    "name": "Soir Rambouillet",
-    "mode": "bus",
-    "background_color": "640082",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02662",
-    "name": "4513",
-    "mode": "bus",
-    "background_color": "a50034",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02664",
-    "name": "Filéo Compans",
-    "mode": "bus",
-    "background_color": "aaaaaa",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02670",
-    "name": "2282",
-    "mode": "bus",
-    "background_color": "6e491e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02671",
-    "name": "2283",
-    "mode": "bus",
-    "background_color": "82c8e6",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02672",
-    "name": "2284",
-    "mode": "bus",
-    "background_color": "d282be",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02673",
-    "name": "2254",
-    "mode": "bus",
-    "background_color": "d2d200",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02683",
-    "name": "60",
-    "mode": "bus",
-    "background_color": "00643c",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02685",
-    "name": "62",
-    "mode": "bus",
-    "background_color": "0055c8",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02686",
-    "name": "63",
-    "mode": "bus",
-    "background_color": "6e491e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02689",
-    "name": "Soir Bussy-st-Georges",
-    "mode": "bus",
-    "background_color": "652c8f",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02693",
-    "name": "2151",
-    "mode": "bus",
-    "background_color": "ff5a00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02695",
-    "name": "2153",
+    "id": "IDFM:C00275",
+    "name": "6570",
     "mode": "bus",
     "background_color": "dc9600",
     "text_color": "000000"
   },
   {
-    "id": "IDFM:C02702",
-    "name": "2161",
+    "id": "IDFM:C00276",
+    "name": "5323",
+    "mode": "bus",
+    "background_color": "c5a3cd",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00286",
+    "name": "6510",
+    "mode": "bus",
+    "background_color": "a0006e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00288",
+    "name": "5437",
+    "mode": "bus",
+    "background_color": "ffcc30",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00305",
+    "name": "1533",
+    "mode": "bus",
+    "background_color": "f49fb3",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00317",
+    "name": "H",
+    "mode": "bus",
+    "background_color": "3c91dc",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00323",
+    "name": "4530",
+    "mode": "bus",
+    "background_color": "a0006e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00328",
+    "name": "6282",
+    "mode": "bus",
+    "background_color": "6e491e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00330",
+    "name": "A",
     "mode": "bus",
     "background_color": "0055c8",
     "text_color": "ffffff"
   },
   {
-    "id": "IDFM:C02713",
-    "name": "245",
+    "id": "IDFM:C00332",
+    "name": "E",
     "mode": "bus",
-    "background_color": "b6134c",
+    "background_color": "9b9bcd",
     "text_color": "ffffff"
   },
   {
-    "id": "IDFM:C02721",
-    "name": "3418",
-    "mode": "bus",
-    "background_color": "00643c",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02723",
-    "name": "A04 Paris La Villette",
-    "mode": "bus",
-    "background_color": "003da5",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02730",
-    "name": "26",
-    "mode": "bus",
-    "background_color": "00a092",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02733",
-    "name": "Remplacement Tram T14",
-    "mode": "bus",
-    "background_color": "00a092",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02737",
-    "name": "4270",
-    "mode": "bus",
-    "background_color": "82c8e6",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02738",
-    "name": "4278",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02768",
-    "name": "Soir Montgeron",
-    "mode": "bus",
-    "background_color": "640082",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02772",
-    "name": "Soir Quincy-sous-Sénart",
-    "mode": "bus",
-    "background_color": "640082",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02776",
-    "name": "TAD Bois le Roi",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02781",
-    "name": "TàD Boissise-le-Roi - Pringy",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02787",
-    "name": "TàD Ourcq Est",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02788",
-    "name": "TàD Dimanche",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02799",
-    "name": "6550",
-    "mode": "bus",
-    "background_color": "640082",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02801",
-    "name": "6578",
+    "id": "IDFM:C00340",
+    "name": "402",
     "mode": "bus",
     "background_color": "ff5a00",
     "text_color": "000000"
   },
   {
-    "id": "IDFM:C02812",
-    "name": "4671",
+    "id": "IDFM:C00343",
+    "name": "6",
     "mode": "bus",
     "background_color": "ff1400",
     "text_color": "ffffff"
   },
   {
-    "id": "IDFM:C02815",
-    "name": "4672",
+    "id": "IDFM:C00366",
+    "name": "4161",
     "mode": "bus",
-    "background_color": "00a092",
+    "background_color": "a0006e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00367",
+    "name": "4162",
+    "mode": "bus",
+    "background_color": "a0006e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00379",
+    "name": "4121",
+    "mode": "bus",
+    "background_color": "0055c8",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00389",
+    "name": "4273",
+    "mode": "bus",
+    "background_color": "82dc73",
     "text_color": "000000"
   },
   {
-    "id": "IDFM:C02818",
-    "name": "4652",
+    "id": "IDFM:C00393",
+    "name": "1101",
+    "mode": "bus",
+    "background_color": "0000ff",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00399",
+    "name": "1113",
+    "mode": "bus",
+    "background_color": "80331b",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00413",
+    "name": "5117",
+    "mode": "bus",
+    "background_color": "00a092",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00416",
+    "name": "5112",
+    "mode": "bus",
+    "background_color": "ff82b4",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00443",
+    "name": "30-10",
+    "mode": "bus",
+    "background_color": "00aad2",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00460",
+    "name": "30-33 Scolaire",
+    "mode": "bus",
+    "background_color": "009fe3",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00461",
+    "name": "30-34 Scolaire",
+    "mode": "bus",
+    "background_color": "e8bb00",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00462",
+    "name": "1316",
     "mode": "bus",
     "background_color": "00643c",
     "text_color": "ffffff"
   },
   {
-    "id": "IDFM:C02821",
-    "name": "TàD 4306",
+    "id": "IDFM:C00466",
+    "name": "30-42",
+    "mode": "bus",
+    "background_color": "e0a0c8",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00472",
+    "name": "95-03B",
+    "mode": "bus",
+    "background_color": "2291d0",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00495",
+    "name": "4611",
+    "mode": "bus",
+    "background_color": "009a7a",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00504",
+    "name": "5337",
+    "mode": "bus",
+    "background_color": "b80c4b",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00505",
+    "name": "5282",
+    "mode": "bus",
+    "background_color": "ed1c2a",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00517",
+    "name": "5281",
+    "mode": "bus",
+    "background_color": "e0b03b",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00521",
+    "name": "5153",
+    "mode": "bus",
+    "background_color": "00643c",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00525",
+    "name": "6176",
+    "mode": "bus",
+    "background_color": "ff82b4",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00527",
+    "name": "6183",
+    "mode": "bus",
+    "background_color": "640082",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00531",
+    "name": "5278",
+    "mode": "bus",
+    "background_color": "ed1c2a",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00533",
+    "name": "5340",
+    "mode": "bus",
+    "background_color": "bb4b9b",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00536",
+    "name": "5189",
+    "mode": "bus",
+    "background_color": "dc9600",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00544",
+    "name": "5141",
+    "mode": "bus",
+    "background_color": "00b297",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00548",
+    "name": "451",
+    "mode": "bus",
+    "background_color": "82c8e6",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00551",
+    "name": "423",
+    "mode": "bus",
+    "background_color": "f78f4b",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00562",
+    "name": "N1",
+    "mode": "bus",
+    "background_color": "df3a82",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00573",
+    "name": "428",
+    "mode": "bus",
+    "background_color": "ff1400",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00581",
+    "name": "450",
+    "mode": "bus",
+    "background_color": "3c91dc",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00591",
+    "name": "4132",
     "mode": "bus",
     "background_color": "ffbe00",
     "text_color": "000000"
   },
   {
-    "id": "IDFM:C02834",
-    "name": "240",
+    "id": "IDFM:C00609",
+    "name": "22",
     "mode": "bus",
-    "background_color": "b90845",
+    "background_color": "fece00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00611",
+    "name": "25",
+    "mode": "bus",
+    "background_color": "b90745",
     "text_color": "ffffff"
   },
   {
-    "id": "IDFM:C02844",
-    "name": "L2 : BESSANCOURT Gare de Bessancourt - HERBLAY Buttes Blanche",
+    "id": "IDFM:C00612",
+    "name": "24",
     "mode": "bus",
-    "background_color": "8e6539",
+    "background_color": "0064b0",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00617",
+    "name": "37",
+    "mode": "bus",
+    "background_color": "09a88e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00628",
+    "name": "2225",
+    "mode": "bus",
+    "background_color": "ff1400",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00635",
+    "name": "2233",
+    "mode": "bus",
+    "background_color": "6e491e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00637",
+    "name": "7718",
+    "mode": "bus",
+    "background_color": "3c91dc",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00639",
+    "name": "Express 19",
+    "mode": "bus",
+    "background_color": "3c91dc",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00658",
+    "name": "2130",
+    "mode": "bus",
+    "background_color": "d2d200",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00661",
+    "name": "7720",
+    "mode": "bus",
+    "background_color": "3c91dc",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00676",
+    "name": "4613",
+    "mode": "bus",
+    "background_color": "0065ae",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00684",
+    "name": "4522",
+    "mode": "bus",
+    "background_color": "d282be",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00694",
+    "name": "6203",
+    "mode": "bus",
+    "background_color": "00643c",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00697",
+    "name": "6206",
+    "mode": "bus",
+    "background_color": "00643c",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00708",
+    "name": "6174",
+    "mode": "bus",
+    "background_color": "d282be",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00709",
+    "name": "6285",
+    "mode": "bus",
+    "background_color": "ff82b4",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00710",
+    "name": "6286",
+    "mode": "bus",
+    "background_color": "6e6e00",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00731",
+    "name": "5409",
+    "mode": "bus",
+    "background_color": "008b5b",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00735",
+    "name": "5447",
+    "mode": "bus",
+    "background_color": "5091cb",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00740",
+    "name": "5422",
+    "mode": "bus",
+    "background_color": "8ad3de",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00749",
+    "name": "5452",
+    "mode": "bus",
+    "background_color": "dfaf47",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00757",
+    "name": "5448",
+    "mode": "bus",
+    "background_color": "8d653d",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00760",
+    "name": "5491",
+    "mode": "bus",
+    "background_color": "eb2132",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00762",
+    "name": "1230",
+    "mode": "bus",
+    "background_color": "f59eb3",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00764",
+    "name": "1206",
+    "mode": "bus",
+    "background_color": "78c696",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00768",
+    "name": "1240",
+    "mode": "bus",
+    "background_color": "006db8",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00771",
+    "name": "1224",
+    "mode": "bus",
+    "background_color": "c5a3cd",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00774",
+    "name": "1207",
+    "mode": "bus",
+    "background_color": "f78f4b",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00783",
+    "name": "1228",
+    "mode": "bus",
+    "background_color": "87d3df",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00789",
+    "name": "3441",
+    "mode": "bus",
+    "background_color": "82dc73",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00790",
+    "name": "3442",
+    "mode": "bus",
+    "background_color": "a0006e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00797",
+    "name": "3412",
+    "mode": "bus",
+    "background_color": "ff5a00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00803",
+    "name": "3106",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00821",
+    "name": "3534",
+    "mode": "bus",
+    "background_color": "82c8e6",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00823",
+    "name": "3543",
+    "mode": "bus",
+    "background_color": "00643c",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00833",
+    "name": "3502",
+    "mode": "bus",
+    "background_color": "82dc73",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00837",
+    "name": "3751",
+    "mode": "bus",
+    "background_color": "640082",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00840",
+    "name": "3779",
+    "mode": "bus",
+    "background_color": "82dc73",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00847",
+    "name": "3713",
+    "mode": "bus",
+    "background_color": "00643c",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00851",
+    "name": "3736",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00862",
+    "name": "3704",
+    "mode": "bus",
+    "background_color": "640082",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00863",
+    "name": "3722",
+    "mode": "bus",
+    "background_color": "ff1400",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00866",
+    "name": "3726",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00871",
+    "name": "3733",
+    "mode": "bus",
+    "background_color": "00643c",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00879",
+    "name": "3602",
+    "mode": "bus",
+    "background_color": "0055c8",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00886",
+    "name": "3656",
+    "mode": "bus",
+    "background_color": "ff82b4",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00892",
+    "name": "3651",
+    "mode": "bus",
+    "background_color": "ff5a00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00898",
+    "name": "2315",
+    "mode": "bus",
+    "background_color": "6fa8dc",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00899",
+    "name": "2335",
+    "mode": "bus",
+    "background_color": "5eb1e3",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00901",
+    "name": "2374",
+    "mode": "bus",
+    "background_color": "bc85bb",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00913",
+    "name": "2491",
+    "mode": "bus",
+    "background_color": "640082",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00917",
+    "name": "2322",
+    "mode": "bus",
+    "background_color": "d2d200",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00921",
+    "name": "2481",
+    "mode": "bus",
+    "background_color": "0055c8",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00923",
+    "name": "2421",
+    "mode": "bus",
+    "background_color": "a0006e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00927",
+    "name": "2340",
+    "mode": "bus",
+    "background_color": "cc0000",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00934",
+    "name": "2428",
+    "mode": "bus",
+    "background_color": "d282be",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00937",
+    "name": "2352",
+    "mode": "bus",
+    "background_color": "2394d2",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00943",
+    "name": "2261",
+    "mode": "bus",
+    "background_color": "a50034",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00947",
+    "name": "7712",
+    "mode": "bus",
+    "background_color": "3c91dc",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00952",
+    "name": "2476",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00953",
+    "name": "2302",
+    "mode": "bus",
+    "background_color": "fbd804",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00957",
+    "name": "2307",
+    "mode": "bus",
+    "background_color": "ceacd2",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00962",
+    "name": "4551",
+    "mode": "bus",
+    "background_color": "3c91dc",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C00975",
+    "name": "4401",
+    "mode": "bus",
+    "background_color": "e3b32a",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00985",
+    "name": "4231",
+    "mode": "bus",
+    "background_color": "d282be",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C00987",
+    "name": "4232",
+    "mode": "bus",
+    "background_color": "ff5a00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01004",
+    "name": "3550",
+    "mode": "bus",
+    "background_color": "00a092",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01034",
+    "name": "5433",
+    "mode": "bus",
+    "background_color": "ffcc30",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01043",
+    "name": "3204",
+    "mode": "bus",
+    "background_color": "ff82b4",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01044",
+    "name": "3120",
+    "mode": "bus",
+    "background_color": "87d3df",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01053",
+    "name": "3133",
+    "mode": "bus",
+    "background_color": "f59eb3",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01075",
+    "name": "24",
+    "mode": "bus",
+    "background_color": "a0006e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01076",
+    "name": "26",
+    "mode": "bus",
+    "background_color": "ff5a00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01087",
+    "name": "46",
+    "mode": "bus",
+    "background_color": "d2d200",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01098",
+    "name": "62",
+    "mode": "bus",
+    "background_color": "6e5b1e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01107",
+    "name": "72",
+    "mode": "bus",
+    "background_color": "ff1400",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01116",
+    "name": "84",
+    "mode": "bus",
+    "background_color": "d282be",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01120",
+    "name": "88",
+    "mode": "bus",
+    "background_color": "d2d200",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01136",
+    "name": "107",
+    "mode": "bus",
+    "background_color": "ff82b4",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01142",
+    "name": "113",
+    "mode": "bus",
+    "background_color": "ff1400",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01145",
+    "name": "116",
+    "mode": "bus",
+    "background_color": "82c8e6",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01149",
+    "name": "120",
+    "mode": "bus",
+    "background_color": "d282be",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01152",
+    "name": "123",
+    "mode": "bus",
+    "background_color": "00643c",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01161",
+    "name": "133",
+    "mode": "bus",
+    "background_color": "82dc73",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01164",
+    "name": "138",
+    "mode": "bus",
+    "background_color": "a0006e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01193",
+    "name": "172",
+    "mode": "bus",
+    "background_color": "00643c",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01195",
+    "name": "174",
+    "mode": "bus",
+    "background_color": "00643c",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01205",
+    "name": "184",
+    "mode": "bus",
+    "background_color": "dc9600",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01206",
+    "name": "185",
+    "mode": "bus",
+    "background_color": "ff5a00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01209",
+    "name": "188",
+    "mode": "bus",
+    "background_color": "d282be",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01210",
+    "name": "189",
+    "mode": "bus",
+    "background_color": "ff5a00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01215",
+    "name": "195",
+    "mode": "bus",
+    "background_color": "a0006e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01225",
+    "name": "211",
+    "mode": "bus",
+    "background_color": "ff82b4",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01226",
+    "name": "212",
+    "mode": "bus",
+    "background_color": "82c8e6",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01239",
+    "name": "241",
+    "mode": "bus",
+    "background_color": "6e491e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01240",
+    "name": "244",
+    "mode": "bus",
+    "background_color": "a0006e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01241",
+    "name": "249",
+    "mode": "bus",
+    "background_color": "d2d200",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01247",
+    "name": "256",
+    "mode": "bus",
+    "background_color": "6e5b1e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01248",
+    "name": "258",
+    "mode": "bus",
+    "background_color": "ff1400",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01251",
+    "name": "268",
+    "mode": "bus",
+    "background_color": "dc9600",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01254",
+    "name": "272",
+    "mode": "bus",
+    "background_color": "ff5a00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01255",
+    "name": "274",
+    "mode": "bus",
+    "background_color": "ff1400",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01260",
+    "name": "281",
+    "mode": "bus",
+    "background_color": "dc9600",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01264",
+    "name": "289",
+    "mode": "bus",
+    "background_color": "a0006e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01272",
+    "name": "301",
+    "mode": "bus",
+    "background_color": "d2d200",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01274",
+    "name": "303",
+    "mode": "bus",
+    "background_color": "6e6e00",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01278",
+    "name": "310",
+    "mode": "bus",
+    "background_color": "d2d200",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01280",
+    "name": "317",
+    "mode": "bus",
+    "background_color": "d2d200",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01282",
+    "name": "319",
+    "mode": "bus",
+    "background_color": "00643c",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01292",
+    "name": "340",
+    "mode": "bus",
+    "background_color": "dc9600",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01294",
+    "name": "341",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01295",
+    "name": "346",
+    "mode": "bus",
+    "background_color": "d2d200",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01306",
+    "name": "366",
+    "mode": "bus",
+    "background_color": "0055c8",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01308",
+    "name": "368",
+    "mode": "bus",
+    "background_color": "d2d200",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01313",
+    "name": "385",
+    "mode": "bus",
+    "background_color": "dc9600",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01318",
+    "name": "393",
+    "mode": "bus",
+    "background_color": "82c8e6",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01324",
+    "name": "467",
+    "mode": "bus",
+    "background_color": "6e6e00",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01327",
+    "name": "488",
+    "mode": "bus",
+    "background_color": "0055c8",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01331",
+    "name": "TILLBUS",
+    "mode": "bus",
+    "background_color": "c5a3ca",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01337",
+    "name": "L'AUDONIENNE",
+    "mode": "bus",
+    "background_color": "df9ab1",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01338",
+    "name": "EOLIEN",
+    "mode": "bus",
+    "background_color": "82dc73",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01342",
+    "name": "TRANSPORT URBAIN BONDYNOIS",
+    "mode": "bus",
+    "background_color": "8e6538",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01352",
+    "name": "TIM",
+    "mode": "bus",
+    "background_color": "89c7d6",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01368",
+    "name": "Le Petit Fontenaisien",
+    "mode": "bus",
+    "background_color": "ff82b4",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01379",
+    "name": "9",
+    "mode": "metro",
+    "background_color": "b6bd00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01382",
+    "name": "12",
+    "mode": "metro",
+    "background_color": "007852",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01387",
+    "name": "7B",
+    "mode": "metro",
+    "background_color": "6eca97",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01388",
+    "name": "ORLYVAL",
+    "mode": "navette",
+    "background_color": "5ec5ed",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01389",
+    "name": "T1",
+    "mode": "tramway",
+    "background_color": "003ca6",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01394",
+    "name": "N51",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01400",
+    "name": "N31",
+    "mode": "bus",
+    "background_color": "ff82b4",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01406",
+    "name": "N43",
+    "mode": "bus",
+    "background_color": "ff5a00",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01413",
+    "name": "N01",
+    "mode": "bus",
+    "background_color": "a0006e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01414",
+    "name": "N02",
+    "mode": "bus",
+    "background_color": "ff1400",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01420",
+    "name": "N12",
+    "mode": "bus",
+    "background_color": "dc9600",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01440",
+    "name": "3311",
+    "mode": "bus",
+    "background_color": "87d3df",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01441",
+    "name": "3306",
+    "mode": "bus",
+    "background_color": "f78f4b",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01443",
+    "name": "3302",
+    "mode": "bus",
+    "background_color": "cec92b",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01444",
+    "name": "3438",
+    "mode": "bus",
+    "background_color": "0055c8",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01445",
+    "name": "3434",
+    "mode": "bus",
+    "background_color": "ff82b4",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01447",
+    "name": "3436",
+    "mode": "bus",
+    "background_color": "640082",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01452",
+    "name": "3240",
+    "mode": "bus",
+    "background_color": "ff82b4",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01473",
+    "name": "2",
+    "mode": "bus",
+    "background_color": "8ce39c",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01481",
+    "name": "426",
+    "mode": "bus",
+    "background_color": "6e491e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01485",
+    "name": "459",
+    "mode": "bus",
+    "background_color": "ff1400",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01488",
+    "name": "471",
+    "mode": "bus",
+    "background_color": "0055c8",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01501",
+    "name": "3251",
+    "mode": "bus",
+    "background_color": "0055c8",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01505",
+    "name": "7707",
+    "mode": "bus",
+    "background_color": "3c91dc",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01506",
+    "name": "3218",
+    "mode": "bus",
+    "background_color": "a50034",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01510",
+    "name": "3214",
+    "mode": "bus",
+    "background_color": "dc9600",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01513",
+    "name": "3246",
+    "mode": "bus",
+    "background_color": "6e491e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01530",
+    "name": "5107",
+    "mode": "bus",
+    "background_color": "f58f53",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01537",
+    "name": "5133",
+    "mode": "bus",
+    "background_color": "82dc73",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01540",
+    "name": "5152",
+    "mode": "bus",
+    "background_color": "82c8e6",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01550",
+    "name": "703",
+    "mode": "bus",
+    "background_color": "3bb2ff",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01552",
+    "name": "9504",
+    "mode": "bus",
+    "background_color": "3bb2ff",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01557",
+    "name": "1139",
+    "mode": "bus",
+    "background_color": "ff82b4",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01565",
+    "name": "4504",
+    "mode": "bus",
+    "background_color": "ff1400",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01570",
+    "name": "4122",
+    "mode": "bus",
+    "background_color": "0055c8",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01575",
+    "name": "603",
+    "mode": "bus",
+    "background_color": "6e491e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01579",
+    "name": "609",
+    "mode": "bus",
+    "background_color": "c04191",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01585",
+    "name": "617",
+    "mode": "bus",
+    "background_color": "f3a4ba",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01591",
+    "name": "637",
+    "mode": "bus",
+    "background_color": "f3a4ba",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01613",
+    "name": "5427",
+    "mode": "bus",
+    "background_color": "008b5b",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01620",
+    "name": "4241",
+    "mode": "bus",
+    "background_color": "0055c8",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01634",
+    "name": "N130",
+    "mode": "bus",
+    "background_color": "ff1400",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01635",
+    "name": "N151",
+    "mode": "bus",
+    "background_color": "cec92a",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01644",
+    "name": "N143",
+    "mode": "bus",
+    "background_color": "5191cd",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01651",
+    "name": "4661",
+    "mode": "bus",
+    "background_color": "ffed00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01662",
+    "name": "1356",
+    "mode": "bus",
+    "background_color": "00a092",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01668",
+    "name": "5197",
+    "mode": "bus",
+    "background_color": "00643c",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01674",
+    "name": "1222",
+    "mode": "bus",
+    "background_color": "006db8",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01680",
+    "name": "35",
+    "mode": "bus",
+    "background_color": "82dc73",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01681",
+    "name": "3",
+    "mode": "bus",
+    "background_color": "00643c",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01684",
+    "name": "T5",
+    "mode": "tramway",
+    "background_color": "62259d",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01685",
+    "name": "1221",
+    "mode": "bus",
+    "background_color": "f78f4b",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01690",
+    "name": "6179",
+    "mode": "bus",
+    "background_color": "6e6e00",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01691",
+    "name": "6180",
+    "mode": "bus",
+    "background_color": "6e6e00",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01696",
+    "name": "248",
+    "mode": "bus",
+    "background_color": "d282be",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01706",
+    "name": "4574",
+    "mode": "bus",
+    "background_color": "a50034",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01714",
+    "name": "4240",
+    "mode": "bus",
+    "background_color": "ff5a00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01720",
+    "name": "5277",
+    "mode": "bus",
+    "background_color": "cec92b",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01725",
+    "name": "3217",
+    "mode": "bus",
+    "background_color": "82c8e6",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01726",
+    "name": "3259",
+    "mode": "bus",
+    "background_color": "6e491e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01735",
+    "name": "1305",
+    "mode": "bus",
+    "background_color": "82c8e6",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01741",
+    "name": "U",
+    "mode": "transilien",
+    "background_color": "b6134c",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01744",
+    "name": "TER Centre - Val de Loire",
+    "mode": "ter",
+    "background_color": "aaaaaa",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01747",
+    "name": "TER Grand-Est",
+    "mode": "ter",
+    "background_color": "aaaaaa",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01751",
+    "name": "430",
+    "mode": "bus",
+    "background_color": "a50034",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01753",
+    "name": "3655",
+    "mode": "bus",
+    "background_color": "00643c",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01757",
+    "name": "La Traverse Brancion-Commerce",
+    "mode": "bus",
+    "background_color": "cbe859",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01765",
+    "name": "4322",
+    "mode": "bus",
+    "background_color": "ff82b4",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01772",
+    "name": "6230",
+    "mode": "bus",
+    "background_color": "00a092",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01776",
+    "name": "2129",
+    "mode": "bus",
+    "background_color": "a50034",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01784",
+    "name": "6504",
+    "mode": "bus",
+    "background_color": "a50034",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01787",
+    "name": "1132",
+    "mode": "bus",
+    "background_color": "d978ff",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01790",
+    "name": "1135",
+    "mode": "bus",
+    "background_color": "00e84f",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01791",
+    "name": "1136",
+    "mode": "bus",
+    "background_color": "ffa61a",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01801",
+    "name": "2113",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01804",
+    "name": "1515",
+    "mode": "bus",
+    "background_color": "00b297",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01815",
+    "name": "32 ZA",
+    "mode": "bus",
+    "background_color": "e3b229",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01816",
+    "name": "R114",
+    "mode": "bus",
+    "background_color": "fece00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01821",
+    "name": "486",
+    "mode": "bus",
+    "background_color": "00643c",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01822",
+    "name": "17",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01827",
+    "name": "2",
+    "mode": "bus",
+    "background_color": "ffbf00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01830",
+    "name": "A",
+    "mode": "bus",
+    "background_color": "ee7d00",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01831",
+    "name": "B",
+    "mode": "bus",
+    "background_color": "e50051",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01832",
+    "name": "C",
+    "mode": "bus",
+    "background_color": "951b81",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01833",
+    "name": "D",
+    "mode": "bus",
+    "background_color": "0077ba",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01836",
+    "name": "G",
+    "mode": "bus",
+    "background_color": "b51f1f",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01840",
+    "name": "U",
+    "mode": "bus",
+    "background_color": "b6134c",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01845",
+    "name": "N",
+    "mode": "bus",
+    "background_color": "00b297",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01851",
+    "name": "C",
+    "mode": "bus",
+    "background_color": "ffcc30",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01854",
+    "name": "TER Grand-Est Bus",
+    "mode": "bus",
+    "background_color": "aaaaaa",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01855",
+    "name": "TER Bourgogne - Franche-Comté Bus",
+    "mode": "bus",
+    "background_color": "aaaaaa",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01857",
+    "name": "TER Centre - Val-de-Loire",
+    "mode": "ter",
+    "background_color": "aaaaaa",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01869",
+    "name": "5102",
+    "mode": "bus",
+    "background_color": "ff1400",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01871",
+    "name": "5111",
+    "mode": "bus",
+    "background_color": "82c8e6",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01886",
+    "name": "4112",
+    "mode": "bus",
+    "background_color": "82dc73",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01900",
+    "name": "Le P'tit Bus du Pré",
+    "mode": "bus",
+    "background_color": "d20d44",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01937",
+    "name": "6516",
+    "mode": "bus",
+    "background_color": "00a092",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01951",
+    "name": "7812",
+    "mode": "bus",
+    "background_color": "4d90cd",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01958",
+    "name": "3531",
+    "mode": "bus",
+    "background_color": "ff82b4",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01960",
+    "name": "3533",
+    "mode": "bus",
+    "background_color": "d282be",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01962",
+    "name": "3541",
+    "mode": "bus",
+    "background_color": "6e491e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01965",
+    "name": "3511",
+    "mode": "bus",
+    "background_color": "d282be",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01967",
+    "name": "3513",
+    "mode": "bus",
+    "background_color": "640082",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01975",
+    "name": "4430",
+    "mode": "bus",
+    "background_color": "98d4e2",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01980",
+    "name": "5221",
+    "mode": "bus",
+    "background_color": "f59eb3",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01989",
+    "name": "5251",
+    "mode": "bus",
+    "background_color": "f78f4b",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01990",
+    "name": "5355",
+    "mode": "bus",
+    "background_color": "e0b03b",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01993",
+    "name": "2427",
+    "mode": "bus",
+    "background_color": "ff82b4",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C01994",
+    "name": "2351",
+    "mode": "bus",
+    "background_color": "be4999",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C01999",
+    "name": "T11",
+    "mode": "tramway",
+    "background_color": "f58f53",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02000",
+    "name": "259",
+    "mode": "bus",
+    "background_color": "3c91dc",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02008",
+    "name": "353",
+    "mode": "bus",
+    "background_color": "d2d200",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02023",
+    "name": "4328",
+    "mode": "bus",
+    "background_color": "d282be",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02027",
+    "name": "260",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02031",
+    "name": "3514",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02065",
+    "name": "4581",
+    "mode": "bus",
+    "background_color": "82c8e6",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02072",
+    "name": "2415",
+    "mode": "bus",
+    "background_color": "0055c8",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02086",
+    "name": "1225",
+    "mode": "bus",
+    "background_color": "c5a3cd",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02111",
+    "name": "443",
+    "mode": "bus",
+    "background_color": "6e6e00",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02118",
+    "name": "2459",
+    "mode": "bus",
+    "background_color": "640082",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02121",
+    "name": "3130",
+    "mode": "bus",
+    "background_color": "b80c4b",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02123",
+    "name": "BALADOBUS",
+    "mode": "bus",
+    "background_color": "a4be28",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02125",
+    "name": "3131",
+    "mode": "bus",
+    "background_color": "9b993b",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02126",
+    "name": "3135",
+    "mode": "bus",
+    "background_color": "008c5a",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02129",
+    "name": "3",
+    "mode": "bus",
+    "background_color": "b44a9c",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02130",
+    "name": "3s",
+    "mode": "bus",
+    "background_color": "b44a9c",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02132",
+    "name": "9s",
+    "mode": "bus",
+    "background_color": "19b200",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02138",
+    "name": "4s",
+    "mode": "bus",
+    "background_color": "dc9015",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02144",
+    "name": "T",
+    "mode": "bus",
+    "background_color": "ff8c57",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02146",
+    "name": "S4",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02148",
+    "name": "S1",
+    "mode": "bus",
+    "background_color": "a38c57",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02150",
+    "name": "F",
+    "mode": "bus",
+    "background_color": "82c8e6",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02156",
+    "name": "3429",
+    "mode": "bus",
+    "background_color": "6e491e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02165",
+    "name": "11.5",
+    "mode": "bus",
+    "background_color": "ceacd2",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02174",
+    "name": "5186",
+    "mode": "bus",
+    "background_color": "dc9600",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02183",
+    "name": "6253",
+    "mode": "bus",
+    "background_color": "8fffe0",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02184",
+    "name": "6254",
+    "mode": "bus",
+    "background_color": "ff82b4",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02194",
+    "name": "3776",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02195",
+    "name": "2480",
+    "mode": "bus",
+    "background_color": "ff5a00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02196",
+    "name": "2417",
+    "mode": "bus",
+    "background_color": "d282be",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02201",
+    "name": "9111",
+    "mode": "bus",
+    "background_color": "3c91dc",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02209",
+    "name": "3659",
+    "mode": "bus",
+    "background_color": "d282be",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02234",
+    "name": "2314",
+    "mode": "bus",
+    "background_color": "17a79c",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02235",
+    "name": "2324",
+    "mode": "bus",
+    "background_color": "38761d",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02236",
+    "name": "2305",
+    "mode": "bus",
+    "background_color": "f37d2e",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02244",
+    "name": "45",
+    "mode": "bus",
+    "background_color": "ff82b4",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02248",
+    "name": "7823",
+    "mode": "bus",
+    "background_color": "5091cb",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02257",
+    "name": "95-29",
+    "mode": "bus",
+    "background_color": "f39000",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02264",
+    "name": "20",
+    "mode": "bus",
+    "background_color": "8cad08",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02282",
+    "name": "3613",
+    "mode": "bus",
+    "background_color": "82dc73",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02283",
+    "name": "3657",
+    "mode": "bus",
+    "background_color": "a0006e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02287",
+    "name": "3425",
+    "mode": "bus",
+    "background_color": "82dc73",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02293",
+    "name": "3660",
+    "mode": "bus",
+    "background_color": "d2d200",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02301",
+    "name": "GPSO Bus",
+    "mode": "bus",
+    "background_color": "ff9900",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02360",
+    "name": "56",
+    "mode": "bus",
+    "background_color": "82c8e6",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02366",
+    "name": "3219",
+    "mode": "bus",
+    "background_color": "640082",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02369",
+    "name": "TER Centre - Val de Loire Bus",
+    "mode": "bus",
+    "background_color": "aaaaaa",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02375",
+    "name": "TER Normandie",
+    "mode": "ter",
+    "background_color": "aaaaaa",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02387",
+    "name": "4332",
+    "mode": "bus",
+    "background_color": "ff5a00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02403",
+    "name": "DM152S",
+    "mode": "bus",
+    "background_color": "85c28e",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02414",
+    "name": "1118",
+    "mode": "bus",
+    "background_color": "ff5a00",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02418",
+    "name": "4535",
+    "mode": "bus",
+    "background_color": "d282be",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02425",
+    "name": "O",
+    "mode": "bus",
+    "background_color": "ff6600",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02428",
+    "name": "446",
+    "mode": "bus",
+    "background_color": "00643c",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02429",
+    "name": "447",
+    "mode": "bus",
+    "background_color": "3c91dc",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02436",
+    "name": "3248",
+    "mode": "bus",
+    "background_color": "6e491e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02437",
+    "name": "209",
+    "mode": "bus",
+    "background_color": "00a092",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02440",
+    "name": "P",
+    "mode": "bus",
+    "background_color": "2da445",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02441",
+    "name": "6523",
+    "mode": "bus",
+    "background_color": "ff82b4",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02446",
+    "name": "5371",
+    "mode": "bus",
+    "background_color": "f78f4b",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02455",
+    "name": "2280",
+    "mode": "bus",
+    "background_color": "d2d200",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02458",
+    "name": "3727",
+    "mode": "bus",
+    "background_color": "82c8e6",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02461",
+    "name": "4524",
+    "mode": "bus",
+    "background_color": "d2d200",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02467",
+    "name": "TàD 4592",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02476",
+    "name": "Soir Villeparisis",
+    "mode": "bus",
+    "background_color": "640082",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02482",
+    "name": "6288",
+    "mode": "bus",
+    "background_color": "d282be",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02483",
+    "name": "Bus Remplacement Métro 10",
+    "mode": "bus",
+    "background_color": "c9910d",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02489",
+    "name": "Soir Meaux Nord",
+    "mode": "bus",
+    "background_color": "652c8f",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02491",
+    "name": "Soir Saint-Germain-en-Laye",
+    "mode": "bus",
+    "background_color": "652c8f",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02492",
+    "name": "Bus Remplacement Métro 3",
+    "mode": "bus",
+    "background_color": "829300",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02501",
+    "name": "U",
+    "mode": "bus",
+    "background_color": "0e8344",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02502",
+    "name": "V",
+    "mode": "bus",
+    "background_color": "646ab1",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02522",
+    "name": "Soir Gretz-Armainvilliers",
+    "mode": "bus",
+    "background_color": "662583",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02525",
+    "name": "Bus Remplacement ORLYVAL",
+    "mode": "bus",
+    "background_color": "5ec5ed",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02526",
+    "name": "N155",
+    "mode": "bus",
+    "background_color": "640082",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02536",
+    "name": "6595",
+    "mode": "bus",
+    "background_color": "82c8e6",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02545",
+    "name": "6594",
+    "mode": "bus",
+    "background_color": "6e491e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02547",
+    "name": "6551",
+    "mode": "bus",
+    "background_color": "82dc73",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02548",
+    "name": "6552",
+    "mode": "bus",
+    "background_color": "82c8e6",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02550",
+    "name": "6554",
+    "mode": "bus",
+    "background_color": "a50034",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02552",
+    "name": "6556",
+    "mode": "bus",
+    "background_color": "ff1400",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02556",
+    "name": "6564",
+    "mode": "bus",
+    "background_color": "d2d200",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02561",
+    "name": "6569",
+    "mode": "bus",
+    "background_color": "dc9600",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02581",
+    "name": "TàD Nangis / La-Chapelle-Rablais",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02603",
+    "name": "Soir Goussainville",
+    "mode": "bus",
+    "background_color": "662583",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02604",
+    "name": "R9",
+    "mode": "bus",
+    "background_color": "662483",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02611",
+    "name": "TàD Goêle",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02613",
+    "name": "TàD Balade en Provinois",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02615",
+    "name": "11",
+    "mode": "bus",
+    "background_color": "ff5a00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02619",
+    "name": "3108",
+    "mode": "bus",
+    "background_color": "87d3df",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02622",
+    "name": "W",
+    "mode": "bus",
+    "background_color": "aaaaaa",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02630",
+    "name": "612",
+    "mode": "bus",
+    "background_color": "640082",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02634",
+    "name": "N162",
+    "mode": "bus",
+    "background_color": "3c91dc",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02640",
+    "name": "Soir Saint-Rémy",
+    "mode": "bus",
+    "background_color": "652c8f",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02642",
+    "name": "7817",
+    "mode": "bus",
+    "background_color": "4d90cd",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02646",
+    "name": "Bus soirée Trappes",
+    "mode": "bus",
+    "background_color": "aaaaaa",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02663",
+    "name": "4536",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02665",
+    "name": "Soir Mantes-la-Ville",
+    "mode": "bus",
+    "background_color": "652c8f",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02680",
+    "name": "2343",
+    "mode": "bus",
+    "background_color": "177fc2",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02687",
+    "name": "3417",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02696",
+    "name": "2154",
+    "mode": "bus",
+    "background_color": "6e491e",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02697",
+    "name": "2155",
+    "mode": "bus",
+    "background_color": "d2d200",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02703",
+    "name": "2162",
+    "mode": "bus",
+    "background_color": "640082",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02706",
+    "name": "2165",
+    "mode": "bus",
+    "background_color": "ff82b4",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02724",
+    "name": "4242",
+    "mode": "bus",
+    "background_color": "ff1400",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02727",
+    "name": "3777",
+    "mode": "bus",
+    "background_color": "0055c8",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02731",
+    "name": "25",
+    "mode": "bus",
+    "background_color": "ffce00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02732",
+    "name": "T14",
+    "mode": "tramway",
+    "background_color": "00a092",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02736",
+    "name": "4215",
+    "mode": "bus",
+    "background_color": "ff82b4",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02740",
+    "name": "4222",
+    "mode": "bus",
+    "background_color": "d2d200",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02741",
+    "name": "5297",
+    "mode": "bus",
+    "background_color": "bb4b9b",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02743",
+    "name": "TàD 3149",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02745",
+    "name": "363",
+    "mode": "bus",
+    "background_color": "a50034",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02749",
+    "name": "TAD FLEXIGO 31 et 35",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02754",
+    "name": "TAD Pays de Limours",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02758",
+    "name": "TàD Créçois",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02759",
+    "name": "TàD Coulommiers",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02760",
+    "name": "TàD Coulommiers",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02761",
+    "name": "TàD Créçois",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02763",
+    "name": "TàD Créçois",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02764",
+    "name": "TAD BREUILLET - ARPAJON",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02774",
+    "name": "Soir Yerres Sud",
+    "mode": "bus",
+    "background_color": "640082",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02777",
+    "name": "TAD Moret Seine et Loing",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02786",
+    "name": "2378",
+    "mode": "bus",
+    "background_color": "aaaaaa",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02790",
+    "name": "T10 BUS",
+    "mode": "bus",
+    "background_color": "6e6e00",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02791",
+    "name": "TàD Zonal Dourdan",
+    "mode": "bus",
+    "background_color": "ffce00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02793",
+    "name": "TàD Zonal Etampes",
+    "mode": "bus",
+    "background_color": "ffce00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02795",
+    "name": "1433",
+    "mode": "bus",
+    "background_color": "b80c4b",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02811",
+    "name": "4666",
+    "mode": "bus",
+    "background_color": "d282be",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02813",
+    "name": "4673",
+    "mode": "bus",
+    "background_color": "0055c8",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02817",
+    "name": "4654",
+    "mode": "bus",
+    "background_color": "d2d200",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02820",
+    "name": "TàD 4318",
+    "mode": "bus",
+    "background_color": "ffbe00",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02827",
+    "name": "TUVIM Ile Saint-Germain",
+    "mode": "bus",
+    "background_color": "f59eb2",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02829",
+    "name": "1104",
+    "mode": "bus",
+    "background_color": "00a092",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02836",
+    "name": "Bus Soirée CORMEILLES-EN-PARISIS",
+    "mode": "bus",
+    "background_color": "662d91",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02839",
+    "name": "Bus Soirée FRANCONVILLE SUD",
+    "mode": "bus",
+    "background_color": "662d91",
+    "text_color": "ffffff"
+  },
+  {
+    "id": "IDFM:C02847",
+    "name": "L5 : CERGY Gare de Cergy Préfecture RER ↔ ARGENTEUIL – Charcot Hôpital",
+    "mode": "bus",
+    "background_color": "006db8",
+    "text_color": "000000"
+  },
+  {
+    "id": "IDFM:C02849",
+    "name": "L7 : SAINT-LEU-LA-FORET Gare de Saint-Leu - SANNOIS Gare de Sannois",
+    "mode": "bus",
+    "background_color": "c5a3cd",
     "text_color": "000000"
   },
   {
@@ -6788,13 +9938,6 @@
     "mode": "bus",
     "background_color": "b6134c",
     "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00740",
-    "name": "5422",
-    "mode": "bus",
-    "background_color": "8ad3de",
-    "text_color": "000000"
   },
   {
     "id": "IDFM:C00747",
@@ -9023,3142 +12166,6 @@
     "text_color": "000000"
   },
   {
-    "id": "IDFM:C02008",
-    "name": "353",
-    "mode": "bus",
-    "background_color": "d2d200",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02023",
-    "name": "4328",
-    "mode": "bus",
-    "background_color": "d282be",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02027",
-    "name": "260",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02031",
-    "name": "3514",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02065",
-    "name": "4581",
-    "mode": "bus",
-    "background_color": "82c8e6",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02072",
-    "name": "2415",
-    "mode": "bus",
-    "background_color": "0055c8",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02086",
-    "name": "1225",
-    "mode": "bus",
-    "background_color": "c5a3cd",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02111",
-    "name": "443",
-    "mode": "bus",
-    "background_color": "6e6e00",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02118",
-    "name": "2459",
-    "mode": "bus",
-    "background_color": "640082",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02121",
-    "name": "3130",
-    "mode": "bus",
-    "background_color": "b80c4b",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02123",
-    "name": "BALADOBUS",
-    "mode": "bus",
-    "background_color": "a4be28",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02125",
-    "name": "3131",
-    "mode": "bus",
-    "background_color": "9b993b",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02126",
-    "name": "3135",
-    "mode": "bus",
-    "background_color": "008c5a",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02129",
-    "name": "3",
-    "mode": "bus",
-    "background_color": "b44a9c",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02130",
-    "name": "3s",
-    "mode": "bus",
-    "background_color": "b44a9c",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02132",
-    "name": "9s",
-    "mode": "bus",
-    "background_color": "19b200",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02138",
-    "name": "4s",
-    "mode": "bus",
-    "background_color": "dc9015",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02144",
-    "name": "T",
-    "mode": "bus",
-    "background_color": "ff8c57",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02146",
-    "name": "S4",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02148",
-    "name": "S1",
-    "mode": "bus",
-    "background_color": "a38c57",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02150",
-    "name": "F",
-    "mode": "bus",
-    "background_color": "82c8e6",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02156",
-    "name": "3429",
-    "mode": "bus",
-    "background_color": "6e491e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02165",
-    "name": "11.5",
-    "mode": "bus",
-    "background_color": "ceacd2",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02174",
-    "name": "5186",
-    "mode": "bus",
-    "background_color": "dc9600",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02183",
-    "name": "6253",
-    "mode": "bus",
-    "background_color": "8fffe0",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02184",
-    "name": "6254",
-    "mode": "bus",
-    "background_color": "ff82b4",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02194",
-    "name": "3776",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02195",
-    "name": "2480",
-    "mode": "bus",
-    "background_color": "ff5a00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02196",
-    "name": "2417",
-    "mode": "bus",
-    "background_color": "d282be",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02201",
-    "name": "9111",
-    "mode": "bus",
-    "background_color": "3c91dc",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02209",
-    "name": "3659",
-    "mode": "bus",
-    "background_color": "d282be",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02234",
-    "name": "2314",
-    "mode": "bus",
-    "background_color": "17a79c",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02235",
-    "name": "2324",
-    "mode": "bus",
-    "background_color": "38761d",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02236",
-    "name": "2305",
-    "mode": "bus",
-    "background_color": "f37d2e",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02244",
-    "name": "45",
-    "mode": "bus",
-    "background_color": "ff82b4",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02248",
-    "name": "7823",
-    "mode": "bus",
-    "background_color": "5091cb",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02257",
-    "name": "95-29",
-    "mode": "bus",
-    "background_color": "f39000",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02264",
-    "name": "20",
-    "mode": "bus",
-    "background_color": "8cad08",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02282",
-    "name": "3613",
-    "mode": "bus",
-    "background_color": "82dc73",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02283",
-    "name": "3657",
-    "mode": "bus",
-    "background_color": "a0006e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02287",
-    "name": "3425",
-    "mode": "bus",
-    "background_color": "82dc73",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02293",
-    "name": "3660",
-    "mode": "bus",
-    "background_color": "d2d200",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02301",
-    "name": "GPSO Bus",
-    "mode": "bus",
-    "background_color": "ff9900",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02360",
-    "name": "56",
-    "mode": "bus",
-    "background_color": "82c8e6",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02366",
-    "name": "3219",
-    "mode": "bus",
-    "background_color": "640082",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02369",
-    "name": "TER Centre - Val de Loire Bus",
-    "mode": "bus",
-    "background_color": "aaaaaa",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02375",
-    "name": "TER Normandie",
-    "mode": "ter",
-    "background_color": "aaaaaa",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02387",
-    "name": "4332",
-    "mode": "bus",
-    "background_color": "ff5a00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02403",
-    "name": "DM152S",
-    "mode": "bus",
-    "background_color": "85c28e",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02414",
-    "name": "1118",
-    "mode": "bus",
-    "background_color": "ff5a00",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02418",
-    "name": "4535",
-    "mode": "bus",
-    "background_color": "d282be",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02425",
-    "name": "O",
-    "mode": "bus",
-    "background_color": "ff6600",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02428",
-    "name": "446",
-    "mode": "bus",
-    "background_color": "00643c",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02429",
-    "name": "447",
-    "mode": "bus",
-    "background_color": "3c91dc",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02436",
-    "name": "3248",
-    "mode": "bus",
-    "background_color": "6e491e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02437",
-    "name": "209",
-    "mode": "bus",
-    "background_color": "00a092",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02440",
-    "name": "P",
-    "mode": "bus",
-    "background_color": "2da445",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02441",
-    "name": "6523",
-    "mode": "bus",
-    "background_color": "ff82b4",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02446",
-    "name": "5371",
-    "mode": "bus",
-    "background_color": "f78f4b",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02455",
-    "name": "2280",
-    "mode": "bus",
-    "background_color": "d2d200",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02458",
-    "name": "3727",
-    "mode": "bus",
-    "background_color": "82c8e6",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02461",
-    "name": "4524",
-    "mode": "bus",
-    "background_color": "d2d200",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02467",
-    "name": "TàD 4592",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02476",
-    "name": "Soir Villeparisis",
-    "mode": "bus",
-    "background_color": "640082",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02482",
-    "name": "6288",
-    "mode": "bus",
-    "background_color": "d282be",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02483",
-    "name": "Bus Remplacement Métro 10",
-    "mode": "bus",
-    "background_color": "c9910d",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02489",
-    "name": "Soir Meaux Nord",
-    "mode": "bus",
-    "background_color": "652c8f",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02491",
-    "name": "Soir Saint-Germain-en-Laye",
-    "mode": "bus",
-    "background_color": "652c8f",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02492",
-    "name": "Bus Remplacement Métro 3",
-    "mode": "bus",
-    "background_color": "829300",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02501",
-    "name": "U",
-    "mode": "bus",
-    "background_color": "0e8344",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02502",
-    "name": "V",
-    "mode": "bus",
-    "background_color": "646ab1",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02522",
-    "name": "Soir Gretz-Armainvilliers",
-    "mode": "bus",
-    "background_color": "662583",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02525",
-    "name": "Bus Remplacement ORLYVAL",
-    "mode": "bus",
-    "background_color": "5ec5ed",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02526",
-    "name": "N155",
-    "mode": "bus",
-    "background_color": "640082",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02536",
-    "name": "6595",
-    "mode": "bus",
-    "background_color": "82c8e6",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02545",
-    "name": "6594",
-    "mode": "bus",
-    "background_color": "6e491e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02547",
-    "name": "6551",
-    "mode": "bus",
-    "background_color": "82dc73",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02548",
-    "name": "6552",
-    "mode": "bus",
-    "background_color": "82c8e6",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02550",
-    "name": "6554",
-    "mode": "bus",
-    "background_color": "a50034",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02552",
-    "name": "6556",
-    "mode": "bus",
-    "background_color": "ff1400",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02556",
-    "name": "6564",
-    "mode": "bus",
-    "background_color": "d2d200",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02561",
-    "name": "6569",
-    "mode": "bus",
-    "background_color": "dc9600",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02581",
-    "name": "TàD Nangis / La-Chapelle-Rablais",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02603",
-    "name": "Soir Goussainville",
-    "mode": "bus",
-    "background_color": "662583",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02604",
-    "name": "R9",
-    "mode": "bus",
-    "background_color": "662483",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02611",
-    "name": "TàD Goêle",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02615",
-    "name": "11",
-    "mode": "bus",
-    "background_color": "ff5a00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02619",
-    "name": "3108",
-    "mode": "bus",
-    "background_color": "87d3df",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02622",
-    "name": "W",
-    "mode": "bus",
-    "background_color": "aaaaaa",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02630",
-    "name": "612",
-    "mode": "bus",
-    "background_color": "640082",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02634",
-    "name": "N162",
-    "mode": "bus",
-    "background_color": "3c91dc",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02640",
-    "name": "Soir Saint-Rémy",
-    "mode": "bus",
-    "background_color": "652c8f",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02642",
-    "name": "7817",
-    "mode": "bus",
-    "background_color": "4d90cd",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02646",
-    "name": "Bus soirée Trappes",
-    "mode": "bus",
-    "background_color": "aaaaaa",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02663",
-    "name": "4536",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02665",
-    "name": "Soir Mantes-la-Ville",
-    "mode": "bus",
-    "background_color": "652c8f",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02680",
-    "name": "2343",
-    "mode": "bus",
-    "background_color": "177fc2",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02687",
-    "name": "3417",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02696",
-    "name": "2154",
-    "mode": "bus",
-    "background_color": "6e491e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02697",
-    "name": "2155",
-    "mode": "bus",
-    "background_color": "d2d200",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02703",
-    "name": "2162",
-    "mode": "bus",
-    "background_color": "640082",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02706",
-    "name": "2165",
-    "mode": "bus",
-    "background_color": "ff82b4",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02724",
-    "name": "4242",
-    "mode": "bus",
-    "background_color": "ff1400",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02727",
-    "name": "3777",
-    "mode": "bus",
-    "background_color": "0055c8",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02731",
-    "name": "25",
-    "mode": "bus",
-    "background_color": "ffce00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02732",
-    "name": "T14",
-    "mode": "tramway",
-    "background_color": "00a092",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02736",
-    "name": "4215",
-    "mode": "bus",
-    "background_color": "ff82b4",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02740",
-    "name": "4222",
-    "mode": "bus",
-    "background_color": "d2d200",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02741",
-    "name": "5297",
-    "mode": "bus",
-    "background_color": "bb4b9b",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02743",
-    "name": "TàD 3149",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02745",
-    "name": "363",
-    "mode": "bus",
-    "background_color": "a50034",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02749",
-    "name": "TAD FLEXIGO 31 et 35",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02754",
-    "name": "TAD Pays de Limours",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02758",
-    "name": "TàD Créçois",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02759",
-    "name": "TàD Coulommiers",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02760",
-    "name": "TàD Coulommiers",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02761",
-    "name": "TàD Créçois",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02763",
-    "name": "TàD Créçois",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02764",
-    "name": "TAD BREUILLET - ARPAJON",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02774",
-    "name": "Soir Yerres Sud",
-    "mode": "bus",
-    "background_color": "640082",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02777",
-    "name": "TAD Moret Seine et Loing",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02786",
-    "name": "2378",
-    "mode": "bus",
-    "background_color": "aaaaaa",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02790",
-    "name": "T10 BUS",
-    "mode": "bus",
-    "background_color": "6e6e00",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02791",
-    "name": "TàD Zonal Dourdan",
-    "mode": "bus",
-    "background_color": "ffce00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02793",
-    "name": "TàD Zonal Etampes",
-    "mode": "bus",
-    "background_color": "ffce00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02795",
-    "name": "1433",
-    "mode": "bus",
-    "background_color": "b80c4b",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02811",
-    "name": "4666",
-    "mode": "bus",
-    "background_color": "d282be",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02813",
-    "name": "4673",
-    "mode": "bus",
-    "background_color": "0055c8",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02817",
-    "name": "4654",
-    "mode": "bus",
-    "background_color": "d2d200",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02820",
-    "name": "TàD 4318",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02827",
-    "name": "TUVIM Ile Saint-Germain",
-    "mode": "bus",
-    "background_color": "f59eb2",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02829",
-    "name": "1104",
-    "mode": "bus",
-    "background_color": "00a092",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02836",
-    "name": "Bus Soirée CORMEILLES-EN-PARISIS",
-    "mode": "bus",
-    "background_color": "662d91",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02839",
-    "name": "Bus Soirée FRANCONVILLE SUD",
-    "mode": "bus",
-    "background_color": "662d91",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C02847",
-    "name": "L5 : CERGY Gare de Cergy Préfecture RER ↔ ARGENTEUIL – Charcot Hôpital",
-    "mode": "bus",
-    "background_color": "006db8",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02849",
-    "name": "L7 : SAINT-LEU-LA-FORET Gare de Saint-Leu - SANNOIS Gare de Sannois",
-    "mode": "bus",
-    "background_color": "c5a3cd",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00003",
-    "name": "Licorne",
-    "mode": "bus",
-    "background_color": "ff82b4",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00007",
-    "name": "282",
-    "mode": "bus",
-    "background_color": "82dc73",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00014",
-    "name": "3110",
-    "mode": "bus",
-    "background_color": "e1be00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00016",
-    "name": "3114",
-    "mode": "bus",
-    "background_color": "ff5a00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00020",
-    "name": "3115",
-    "mode": "bus",
-    "background_color": "6e491e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00030",
-    "name": "E",
-    "mode": "bus",
-    "background_color": "d896c1",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00043",
-    "name": "6124",
-    "mode": "bus",
-    "background_color": "0055c8",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00054",
-    "name": "5332",
-    "mode": "bus",
-    "background_color": "f78f4b",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00075",
-    "name": "4614",
-    "mode": "bus",
-    "background_color": "54aee3",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00098",
-    "name": "4441",
-    "mode": "bus",
-    "background_color": "8d5e2a",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00103",
-    "name": "4510",
-    "mode": "bus",
-    "background_color": "d2d200",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00104",
-    "name": "4326",
-    "mode": "bus",
-    "background_color": "a0006e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00124",
-    "name": "5270",
-    "mode": "bus",
-    "background_color": "f78f4b",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00129",
-    "name": "6561",
-    "mode": "bus",
-    "background_color": "82c8e6",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00130",
-    "name": "6562",
-    "mode": "bus",
-    "background_color": "a50034",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00137",
-    "name": "5211",
-    "mode": "bus",
-    "background_color": "9b993b",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00138",
-    "name": "5212",
-    "mode": "bus",
-    "background_color": "cec92b",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00139",
-    "name": "1114",
-    "mode": "bus",
-    "background_color": "0d99bf",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00158",
-    "name": "R2 Nord",
-    "mode": "bus",
-    "background_color": "9fc5e8",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00163",
-    "name": "5311",
-    "mode": "bus",
-    "background_color": "f59eb3",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00182",
-    "name": "5301",
-    "mode": "bus",
-    "background_color": "ed1c2a",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00189",
-    "name": "1",
-    "mode": "bus",
-    "background_color": "00814f",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00196",
-    "name": "1314",
-    "mode": "bus",
-    "background_color": "640082",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00221",
-    "name": "2127",
-    "mode": "bus",
-    "background_color": "ff82b4",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00223",
-    "name": "EX 93",
-    "mode": "bus",
-    "background_color": "5191cd",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00224",
-    "name": "Gbus",
-    "mode": "bus",
-    "background_color": "f4a8bc",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00225",
-    "name": "2176",
-    "mode": "bus",
-    "background_color": "6e491e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00229",
-    "name": "R2",
-    "mode": "bus",
-    "background_color": "f28f42",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00236",
-    "name": "R111",
-    "mode": "bus",
-    "background_color": "f5a05f",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00238",
-    "name": "R113",
-    "mode": "bus",
-    "background_color": "e3051b",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00244",
-    "name": "R109",
-    "mode": "bus",
-    "background_color": "ceacd2",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00245",
-    "name": "2101",
-    "mode": "bus",
-    "background_color": "ff1400",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00253",
-    "name": "2110",
-    "mode": "bus",
-    "background_color": "d282be",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00262",
-    "name": "2377",
-    "mode": "bus",
-    "background_color": "00814f",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00271",
-    "name": "6591",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00275",
-    "name": "6570",
-    "mode": "bus",
-    "background_color": "dc9600",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00276",
-    "name": "5323",
-    "mode": "bus",
-    "background_color": "c5a3cd",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00286",
-    "name": "6510",
-    "mode": "bus",
-    "background_color": "a0006e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00288",
-    "name": "5437",
-    "mode": "bus",
-    "background_color": "ffcc30",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00305",
-    "name": "1533",
-    "mode": "bus",
-    "background_color": "f49fb3",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00317",
-    "name": "H",
-    "mode": "bus",
-    "background_color": "3c91dc",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00323",
-    "name": "4530",
-    "mode": "bus",
-    "background_color": "a0006e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00328",
-    "name": "6282",
-    "mode": "bus",
-    "background_color": "6e491e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00330",
-    "name": "A",
-    "mode": "bus",
-    "background_color": "0055c8",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00332",
-    "name": "E",
-    "mode": "bus",
-    "background_color": "9b9bcd",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00340",
-    "name": "402",
-    "mode": "bus",
-    "background_color": "ff5a00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00343",
-    "name": "6",
-    "mode": "bus",
-    "background_color": "ff1400",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00366",
-    "name": "4161",
-    "mode": "bus",
-    "background_color": "a0006e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00367",
-    "name": "4162",
-    "mode": "bus",
-    "background_color": "a0006e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00379",
-    "name": "4121",
-    "mode": "bus",
-    "background_color": "0055c8",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00389",
-    "name": "4273",
-    "mode": "bus",
-    "background_color": "82dc73",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00393",
-    "name": "1101",
-    "mode": "bus",
-    "background_color": "0000ff",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00399",
-    "name": "1113",
-    "mode": "bus",
-    "background_color": "80331b",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00413",
-    "name": "5117",
-    "mode": "bus",
-    "background_color": "00a092",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00416",
-    "name": "5112",
-    "mode": "bus",
-    "background_color": "ff82b4",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00443",
-    "name": "30-10",
-    "mode": "bus",
-    "background_color": "00aad2",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00460",
-    "name": "30-33 Scolaire",
-    "mode": "bus",
-    "background_color": "009fe3",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00461",
-    "name": "30-34 Scolaire",
-    "mode": "bus",
-    "background_color": "e8bb00",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00462",
-    "name": "1316",
-    "mode": "bus",
-    "background_color": "00643c",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00466",
-    "name": "30-42",
-    "mode": "bus",
-    "background_color": "e0a0c8",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00472",
-    "name": "95-03B",
-    "mode": "bus",
-    "background_color": "2291d0",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00495",
-    "name": "4611",
-    "mode": "bus",
-    "background_color": "009a7a",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00504",
-    "name": "5337",
-    "mode": "bus",
-    "background_color": "b80c4b",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00505",
-    "name": "5282",
-    "mode": "bus",
-    "background_color": "ed1c2a",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00517",
-    "name": "5281",
-    "mode": "bus",
-    "background_color": "e0b03b",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00521",
-    "name": "5153",
-    "mode": "bus",
-    "background_color": "00643c",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00525",
-    "name": "6176",
-    "mode": "bus",
-    "background_color": "ff82b4",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00527",
-    "name": "6183",
-    "mode": "bus",
-    "background_color": "640082",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00531",
-    "name": "5278",
-    "mode": "bus",
-    "background_color": "ed1c2a",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00533",
-    "name": "5340",
-    "mode": "bus",
-    "background_color": "bb4b9b",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00536",
-    "name": "5189",
-    "mode": "bus",
-    "background_color": "dc9600",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00544",
-    "name": "5141",
-    "mode": "bus",
-    "background_color": "00b297",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00548",
-    "name": "451",
-    "mode": "bus",
-    "background_color": "82c8e6",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00551",
-    "name": "423",
-    "mode": "bus",
-    "background_color": "f78f4b",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00562",
-    "name": "N1",
-    "mode": "bus",
-    "background_color": "df3a82",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00573",
-    "name": "428",
-    "mode": "bus",
-    "background_color": "ff1400",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00581",
-    "name": "450",
-    "mode": "bus",
-    "background_color": "3c91dc",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00591",
-    "name": "4132",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00609",
-    "name": "22",
-    "mode": "bus",
-    "background_color": "fece00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00611",
-    "name": "25",
-    "mode": "bus",
-    "background_color": "b90745",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00612",
-    "name": "24",
-    "mode": "bus",
-    "background_color": "0064b0",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00617",
-    "name": "37",
-    "mode": "bus",
-    "background_color": "09a88e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00628",
-    "name": "2225",
-    "mode": "bus",
-    "background_color": "ff1400",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00635",
-    "name": "2233",
-    "mode": "bus",
-    "background_color": "6e491e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00637",
-    "name": "7718",
-    "mode": "bus",
-    "background_color": "3c91dc",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00639",
-    "name": "Express 19",
-    "mode": "bus",
-    "background_color": "3c91dc",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00658",
-    "name": "2130",
-    "mode": "bus",
-    "background_color": "d2d200",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00661",
-    "name": "7720",
-    "mode": "bus",
-    "background_color": "3c91dc",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00676",
-    "name": "4613",
-    "mode": "bus",
-    "background_color": "0065ae",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00684",
-    "name": "4522",
-    "mode": "bus",
-    "background_color": "d282be",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00694",
-    "name": "6203",
-    "mode": "bus",
-    "background_color": "00643c",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00697",
-    "name": "6206",
-    "mode": "bus",
-    "background_color": "00643c",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00708",
-    "name": "6174",
-    "mode": "bus",
-    "background_color": "d282be",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00709",
-    "name": "6285",
-    "mode": "bus",
-    "background_color": "ff82b4",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00710",
-    "name": "6286",
-    "mode": "bus",
-    "background_color": "6e6e00",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00731",
-    "name": "5409",
-    "mode": "bus",
-    "background_color": "008b5b",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00735",
-    "name": "5447",
-    "mode": "bus",
-    "background_color": "5091cb",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00749",
-    "name": "5452",
-    "mode": "bus",
-    "background_color": "dfaf47",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00757",
-    "name": "5448",
-    "mode": "bus",
-    "background_color": "8d653d",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00760",
-    "name": "5491",
-    "mode": "bus",
-    "background_color": "eb2132",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00762",
-    "name": "1230",
-    "mode": "bus",
-    "background_color": "f59eb3",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00764",
-    "name": "1206",
-    "mode": "bus",
-    "background_color": "78c696",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00768",
-    "name": "1240",
-    "mode": "bus",
-    "background_color": "006db8",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00771",
-    "name": "1224",
-    "mode": "bus",
-    "background_color": "c5a3cd",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00774",
-    "name": "1207",
-    "mode": "bus",
-    "background_color": "f78f4b",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00783",
-    "name": "1228",
-    "mode": "bus",
-    "background_color": "87d3df",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00789",
-    "name": "3441",
-    "mode": "bus",
-    "background_color": "82dc73",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00790",
-    "name": "3442",
-    "mode": "bus",
-    "background_color": "a0006e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00797",
-    "name": "3412",
-    "mode": "bus",
-    "background_color": "ff5a00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00803",
-    "name": "3106",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00821",
-    "name": "3534",
-    "mode": "bus",
-    "background_color": "82c8e6",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00823",
-    "name": "3543",
-    "mode": "bus",
-    "background_color": "00643c",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00833",
-    "name": "3502",
-    "mode": "bus",
-    "background_color": "82dc73",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00837",
-    "name": "3751",
-    "mode": "bus",
-    "background_color": "640082",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00840",
-    "name": "3779",
-    "mode": "bus",
-    "background_color": "82dc73",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00847",
-    "name": "3713",
-    "mode": "bus",
-    "background_color": "00643c",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00851",
-    "name": "3736",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00862",
-    "name": "3704",
-    "mode": "bus",
-    "background_color": "640082",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00863",
-    "name": "3722",
-    "mode": "bus",
-    "background_color": "ff1400",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00866",
-    "name": "3726",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00871",
-    "name": "3733",
-    "mode": "bus",
-    "background_color": "00643c",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00879",
-    "name": "3602",
-    "mode": "bus",
-    "background_color": "0055c8",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00886",
-    "name": "3656",
-    "mode": "bus",
-    "background_color": "ff82b4",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00892",
-    "name": "3651",
-    "mode": "bus",
-    "background_color": "ff5a00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00898",
-    "name": "2315",
-    "mode": "bus",
-    "background_color": "6fa8dc",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00899",
-    "name": "2335",
-    "mode": "bus",
-    "background_color": "5eb1e3",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00901",
-    "name": "2374",
-    "mode": "bus",
-    "background_color": "bc85bb",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00913",
-    "name": "2491",
-    "mode": "bus",
-    "background_color": "640082",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00917",
-    "name": "2322",
-    "mode": "bus",
-    "background_color": "d2d200",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00921",
-    "name": "2481",
-    "mode": "bus",
-    "background_color": "0055c8",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00923",
-    "name": "2421",
-    "mode": "bus",
-    "background_color": "a0006e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00927",
-    "name": "2340",
-    "mode": "bus",
-    "background_color": "cc0000",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00934",
-    "name": "2428",
-    "mode": "bus",
-    "background_color": "d282be",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00937",
-    "name": "2352",
-    "mode": "bus",
-    "background_color": "2394d2",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00943",
-    "name": "2261",
-    "mode": "bus",
-    "background_color": "a50034",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00947",
-    "name": "7712",
-    "mode": "bus",
-    "background_color": "3c91dc",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00952",
-    "name": "2476",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00953",
-    "name": "2302",
-    "mode": "bus",
-    "background_color": "fbd804",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00957",
-    "name": "2307",
-    "mode": "bus",
-    "background_color": "ceacd2",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00962",
-    "name": "4551",
-    "mode": "bus",
-    "background_color": "3c91dc",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C00975",
-    "name": "4401",
-    "mode": "bus",
-    "background_color": "e3b32a",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00985",
-    "name": "4231",
-    "mode": "bus",
-    "background_color": "d282be",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C00987",
-    "name": "4232",
-    "mode": "bus",
-    "background_color": "ff5a00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01004",
-    "name": "3550",
-    "mode": "bus",
-    "background_color": "00a092",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01034",
-    "name": "5433",
-    "mode": "bus",
-    "background_color": "ffcc30",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01043",
-    "name": "3204",
-    "mode": "bus",
-    "background_color": "ff82b4",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01044",
-    "name": "3120",
-    "mode": "bus",
-    "background_color": "87d3df",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01053",
-    "name": "3133",
-    "mode": "bus",
-    "background_color": "f59eb3",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01075",
-    "name": "24",
-    "mode": "bus",
-    "background_color": "a0006e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01076",
-    "name": "26",
-    "mode": "bus",
-    "background_color": "ff5a00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01087",
-    "name": "46",
-    "mode": "bus",
-    "background_color": "d2d200",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01098",
-    "name": "62",
-    "mode": "bus",
-    "background_color": "6e5b1e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01107",
-    "name": "72",
-    "mode": "bus",
-    "background_color": "ff1400",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01116",
-    "name": "84",
-    "mode": "bus",
-    "background_color": "d282be",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01120",
-    "name": "88",
-    "mode": "bus",
-    "background_color": "d2d200",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01136",
-    "name": "107",
-    "mode": "bus",
-    "background_color": "ff82b4",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01142",
-    "name": "113",
-    "mode": "bus",
-    "background_color": "ff1400",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01145",
-    "name": "116",
-    "mode": "bus",
-    "background_color": "82c8e6",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01149",
-    "name": "120",
-    "mode": "bus",
-    "background_color": "d282be",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01152",
-    "name": "123",
-    "mode": "bus",
-    "background_color": "00643c",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01161",
-    "name": "133",
-    "mode": "bus",
-    "background_color": "82dc73",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01164",
-    "name": "138",
-    "mode": "bus",
-    "background_color": "a0006e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01193",
-    "name": "172",
-    "mode": "bus",
-    "background_color": "00643c",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01195",
-    "name": "174",
-    "mode": "bus",
-    "background_color": "00643c",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01205",
-    "name": "184",
-    "mode": "bus",
-    "background_color": "dc9600",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01206",
-    "name": "185",
-    "mode": "bus",
-    "background_color": "ff5a00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01209",
-    "name": "188",
-    "mode": "bus",
-    "background_color": "d282be",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01210",
-    "name": "189",
-    "mode": "bus",
-    "background_color": "ff5a00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01215",
-    "name": "195",
-    "mode": "bus",
-    "background_color": "a0006e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01225",
-    "name": "211",
-    "mode": "bus",
-    "background_color": "ff82b4",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01226",
-    "name": "212",
-    "mode": "bus",
-    "background_color": "82c8e6",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01239",
-    "name": "241",
-    "mode": "bus",
-    "background_color": "6e491e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01240",
-    "name": "244",
-    "mode": "bus",
-    "background_color": "a0006e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01241",
-    "name": "249",
-    "mode": "bus",
-    "background_color": "d2d200",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01247",
-    "name": "256",
-    "mode": "bus",
-    "background_color": "6e5b1e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01248",
-    "name": "258",
-    "mode": "bus",
-    "background_color": "ff1400",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01251",
-    "name": "268",
-    "mode": "bus",
-    "background_color": "dc9600",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01254",
-    "name": "272",
-    "mode": "bus",
-    "background_color": "ff5a00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01255",
-    "name": "274",
-    "mode": "bus",
-    "background_color": "ff1400",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01260",
-    "name": "281",
-    "mode": "bus",
-    "background_color": "dc9600",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01264",
-    "name": "289",
-    "mode": "bus",
-    "background_color": "a0006e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01272",
-    "name": "301",
-    "mode": "bus",
-    "background_color": "d2d200",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01274",
-    "name": "303",
-    "mode": "bus",
-    "background_color": "6e6e00",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01278",
-    "name": "310",
-    "mode": "bus",
-    "background_color": "d2d200",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01280",
-    "name": "317",
-    "mode": "bus",
-    "background_color": "d2d200",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01282",
-    "name": "319",
-    "mode": "bus",
-    "background_color": "00643c",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01292",
-    "name": "340",
-    "mode": "bus",
-    "background_color": "dc9600",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01294",
-    "name": "341",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01295",
-    "name": "346",
-    "mode": "bus",
-    "background_color": "d2d200",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01306",
-    "name": "366",
-    "mode": "bus",
-    "background_color": "0055c8",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01308",
-    "name": "368",
-    "mode": "bus",
-    "background_color": "d2d200",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01313",
-    "name": "385",
-    "mode": "bus",
-    "background_color": "dc9600",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01318",
-    "name": "393",
-    "mode": "bus",
-    "background_color": "82c8e6",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01324",
-    "name": "467",
-    "mode": "bus",
-    "background_color": "6e6e00",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01327",
-    "name": "488",
-    "mode": "bus",
-    "background_color": "0055c8",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01331",
-    "name": "TILLBUS",
-    "mode": "bus",
-    "background_color": "c5a3ca",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01337",
-    "name": "L'AUDONIENNE",
-    "mode": "bus",
-    "background_color": "df9ab1",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01338",
-    "name": "EOLIEN",
-    "mode": "bus",
-    "background_color": "82dc73",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01342",
-    "name": "TRANSPORT URBAIN BONDYNOIS",
-    "mode": "bus",
-    "background_color": "8e6538",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01352",
-    "name": "TIM",
-    "mode": "bus",
-    "background_color": "89c7d6",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01368",
-    "name": "Le Petit Fontenaisien",
-    "mode": "bus",
-    "background_color": "ff82b4",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01379",
-    "name": "9",
-    "mode": "metro",
-    "background_color": "b6bd00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01382",
-    "name": "12",
-    "mode": "metro",
-    "background_color": "007852",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01387",
-    "name": "7B",
-    "mode": "metro",
-    "background_color": "6eca97",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01388",
-    "name": "ORLYVAL",
-    "mode": "navette",
-    "background_color": "5ec5ed",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01389",
-    "name": "T1",
-    "mode": "tramway",
-    "background_color": "003ca6",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01394",
-    "name": "N51",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01400",
-    "name": "N31",
-    "mode": "bus",
-    "background_color": "ff82b4",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01406",
-    "name": "N43",
-    "mode": "bus",
-    "background_color": "ff5a00",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01413",
-    "name": "N01",
-    "mode": "bus",
-    "background_color": "a0006e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01414",
-    "name": "N02",
-    "mode": "bus",
-    "background_color": "ff1400",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01420",
-    "name": "N12",
-    "mode": "bus",
-    "background_color": "dc9600",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01440",
-    "name": "3311",
-    "mode": "bus",
-    "background_color": "87d3df",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01441",
-    "name": "3306",
-    "mode": "bus",
-    "background_color": "f78f4b",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01443",
-    "name": "3302",
-    "mode": "bus",
-    "background_color": "cec92b",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01444",
-    "name": "3438",
-    "mode": "bus",
-    "background_color": "0055c8",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01445",
-    "name": "3434",
-    "mode": "bus",
-    "background_color": "ff82b4",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01447",
-    "name": "3436",
-    "mode": "bus",
-    "background_color": "640082",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01452",
-    "name": "3240",
-    "mode": "bus",
-    "background_color": "ff82b4",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01473",
-    "name": "2",
-    "mode": "bus",
-    "background_color": "8ce39c",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01481",
-    "name": "426",
-    "mode": "bus",
-    "background_color": "6e491e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01485",
-    "name": "459",
-    "mode": "bus",
-    "background_color": "ff1400",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01488",
-    "name": "471",
-    "mode": "bus",
-    "background_color": "0055c8",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01501",
-    "name": "3251",
-    "mode": "bus",
-    "background_color": "0055c8",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01505",
-    "name": "7707",
-    "mode": "bus",
-    "background_color": "3c91dc",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01506",
-    "name": "3218",
-    "mode": "bus",
-    "background_color": "a50034",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01510",
-    "name": "3214",
-    "mode": "bus",
-    "background_color": "dc9600",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01513",
-    "name": "3246",
-    "mode": "bus",
-    "background_color": "6e491e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01530",
-    "name": "5107",
-    "mode": "bus",
-    "background_color": "f58f53",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01537",
-    "name": "5133",
-    "mode": "bus",
-    "background_color": "82dc73",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01540",
-    "name": "5152",
-    "mode": "bus",
-    "background_color": "82c8e6",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01550",
-    "name": "703",
-    "mode": "bus",
-    "background_color": "3bb2ff",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01552",
-    "name": "9504",
-    "mode": "bus",
-    "background_color": "3bb2ff",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01557",
-    "name": "1139",
-    "mode": "bus",
-    "background_color": "ff82b4",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01565",
-    "name": "4504",
-    "mode": "bus",
-    "background_color": "ff1400",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01570",
-    "name": "4122",
-    "mode": "bus",
-    "background_color": "0055c8",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01575",
-    "name": "603",
-    "mode": "bus",
-    "background_color": "6e491e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01579",
-    "name": "609",
-    "mode": "bus",
-    "background_color": "c04191",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01585",
-    "name": "617",
-    "mode": "bus",
-    "background_color": "f3a4ba",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01591",
-    "name": "637",
-    "mode": "bus",
-    "background_color": "f3a4ba",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01613",
-    "name": "5427",
-    "mode": "bus",
-    "background_color": "008b5b",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01620",
-    "name": "4241",
-    "mode": "bus",
-    "background_color": "0055c8",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01634",
-    "name": "N130",
-    "mode": "bus",
-    "background_color": "ff1400",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01635",
-    "name": "N151",
-    "mode": "bus",
-    "background_color": "cec92a",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01644",
-    "name": "N143",
-    "mode": "bus",
-    "background_color": "5191cd",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01651",
-    "name": "4661",
-    "mode": "bus",
-    "background_color": "ffed00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01662",
-    "name": "1356",
-    "mode": "bus",
-    "background_color": "00a092",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01668",
-    "name": "5197",
-    "mode": "bus",
-    "background_color": "00643c",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01674",
-    "name": "1222",
-    "mode": "bus",
-    "background_color": "006db8",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01680",
-    "name": "35",
-    "mode": "bus",
-    "background_color": "82dc73",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01681",
-    "name": "3",
-    "mode": "bus",
-    "background_color": "00643c",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01684",
-    "name": "T5",
-    "mode": "tramway",
-    "background_color": "62259d",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01685",
-    "name": "1221",
-    "mode": "bus",
-    "background_color": "f78f4b",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01690",
-    "name": "6179",
-    "mode": "bus",
-    "background_color": "6e6e00",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01691",
-    "name": "6180",
-    "mode": "bus",
-    "background_color": "6e6e00",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01696",
-    "name": "248",
-    "mode": "bus",
-    "background_color": "d282be",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01706",
-    "name": "4574",
-    "mode": "bus",
-    "background_color": "a50034",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01714",
-    "name": "4240",
-    "mode": "bus",
-    "background_color": "ff5a00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01720",
-    "name": "5277",
-    "mode": "bus",
-    "background_color": "cec92b",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01725",
-    "name": "3217",
-    "mode": "bus",
-    "background_color": "82c8e6",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01726",
-    "name": "3259",
-    "mode": "bus",
-    "background_color": "6e491e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01735",
-    "name": "1305",
-    "mode": "bus",
-    "background_color": "82c8e6",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01741",
-    "name": "U",
-    "mode": "transilien",
-    "background_color": "b6134c",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01744",
-    "name": "TER Centre - Val de Loire",
-    "mode": "ter",
-    "background_color": "aaaaaa",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01747",
-    "name": "TER Grand-Est",
-    "mode": "ter",
-    "background_color": "aaaaaa",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01751",
-    "name": "430",
-    "mode": "bus",
-    "background_color": "a50034",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01753",
-    "name": "3655",
-    "mode": "bus",
-    "background_color": "00643c",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01757",
-    "name": "La Traverse Brancion-Commerce",
-    "mode": "bus",
-    "background_color": "cbe859",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01765",
-    "name": "4322",
-    "mode": "bus",
-    "background_color": "ff82b4",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01772",
-    "name": "6230",
-    "mode": "bus",
-    "background_color": "00a092",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01776",
-    "name": "2129",
-    "mode": "bus",
-    "background_color": "a50034",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01784",
-    "name": "6504",
-    "mode": "bus",
-    "background_color": "a50034",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01787",
-    "name": "1132",
-    "mode": "bus",
-    "background_color": "d978ff",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01790",
-    "name": "1135",
-    "mode": "bus",
-    "background_color": "00e84f",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01791",
-    "name": "1136",
-    "mode": "bus",
-    "background_color": "ffa61a",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01801",
-    "name": "2113",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01804",
-    "name": "1515",
-    "mode": "bus",
-    "background_color": "00b297",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01815",
-    "name": "32 ZA",
-    "mode": "bus",
-    "background_color": "e3b229",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01816",
-    "name": "R114",
-    "mode": "bus",
-    "background_color": "fece00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01821",
-    "name": "486",
-    "mode": "bus",
-    "background_color": "00643c",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01822",
-    "name": "17",
-    "mode": "bus",
-    "background_color": "ffbe00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01827",
-    "name": "2",
-    "mode": "bus",
-    "background_color": "ffbf00",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01830",
-    "name": "A",
-    "mode": "bus",
-    "background_color": "ee7d00",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01831",
-    "name": "B",
-    "mode": "bus",
-    "background_color": "e50051",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01832",
-    "name": "C",
-    "mode": "bus",
-    "background_color": "951b81",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01833",
-    "name": "D",
-    "mode": "bus",
-    "background_color": "0077ba",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01836",
-    "name": "G",
-    "mode": "bus",
-    "background_color": "b51f1f",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01840",
-    "name": "U",
-    "mode": "bus",
-    "background_color": "b6134c",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01845",
-    "name": "N",
-    "mode": "bus",
-    "background_color": "00b297",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01851",
-    "name": "C",
-    "mode": "bus",
-    "background_color": "ffcc30",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01854",
-    "name": "TER Grand-Est Bus",
-    "mode": "bus",
-    "background_color": "aaaaaa",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01855",
-    "name": "TER Bourgogne - Franche-Comté Bus",
-    "mode": "bus",
-    "background_color": "aaaaaa",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01857",
-    "name": "TER Centre - Val-de-Loire",
-    "mode": "ter",
-    "background_color": "aaaaaa",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01869",
-    "name": "5102",
-    "mode": "bus",
-    "background_color": "ff1400",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01871",
-    "name": "5111",
-    "mode": "bus",
-    "background_color": "82c8e6",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01886",
-    "name": "4112",
-    "mode": "bus",
-    "background_color": "82dc73",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01900",
-    "name": "Le P'tit Bus du Pré",
-    "mode": "bus",
-    "background_color": "d20d44",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01937",
-    "name": "6516",
-    "mode": "bus",
-    "background_color": "00a092",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01951",
-    "name": "7812",
-    "mode": "bus",
-    "background_color": "4d90cd",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01958",
-    "name": "3531",
-    "mode": "bus",
-    "background_color": "ff82b4",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01960",
-    "name": "3533",
-    "mode": "bus",
-    "background_color": "d282be",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01962",
-    "name": "3541",
-    "mode": "bus",
-    "background_color": "6e491e",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01965",
-    "name": "3511",
-    "mode": "bus",
-    "background_color": "d282be",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01967",
-    "name": "3513",
-    "mode": "bus",
-    "background_color": "640082",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01975",
-    "name": "4430",
-    "mode": "bus",
-    "background_color": "98d4e2",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01980",
-    "name": "5221",
-    "mode": "bus",
-    "background_color": "f59eb3",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01989",
-    "name": "5251",
-    "mode": "bus",
-    "background_color": "f78f4b",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01990",
-    "name": "5355",
-    "mode": "bus",
-    "background_color": "e0b03b",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01993",
-    "name": "2427",
-    "mode": "bus",
-    "background_color": "ff82b4",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C01994",
-    "name": "2351",
-    "mode": "bus",
-    "background_color": "be4999",
-    "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01999",
-    "name": "T11",
-    "mode": "tramway",
-    "background_color": "f58f53",
-    "text_color": "000000"
-  },
-  {
-    "id": "IDFM:C02000",
-    "name": "259",
-    "mode": "bus",
-    "background_color": "3c91dc",
-    "text_color": "ffffff"
-  },
-  {
     "id": "IDFM:C00027",
     "name": "7716",
     "mode": "bus",
@@ -13781,13 +13788,6 @@
     "mode": "bus",
     "background_color": "6e6e00",
     "text_color": "ffffff"
-  },
-  {
-    "id": "IDFM:C01616",
-    "name": "4201",
-    "mode": "bus",
-    "background_color": "d282be",
-    "text_color": "000000"
   },
   {
     "id": "IDFM:C01622",
