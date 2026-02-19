@@ -47,8 +47,10 @@ func FetchRoutes() {
 	json.NewDecoder(respStops.Body).Decode(&rawStops)
 
 	stopLookup := make(map[string]string)
+	stopNameMap := make(map[string]string) // stop_id → stop_name
 	for _, s := range rawStops {
 		stopID := fmt.Sprint(s["stop_id"])
+		stopName := fmt.Sprint(s["stop_name"])
 		var lat, lon float64
 		if geo, ok := s["pointgeo"].(map[string]interface{}); ok {
 			lat, _ = geo["lat"].(float64)
@@ -61,6 +63,9 @@ func FetchRoutes() {
 		if stopID != "" && stopID != "<nil>" && lat != 0 {
 			key := fmt.Sprintf("%.4f,%.4f", lat, lon)
 			stopLookup[key] = stopID
+		}
+		if stopID != "" && stopID != "<nil>" && stopName != "" && stopName != "<nil>" {
+			stopNameMap[stopID] = stopName
 		}
 	}
 
@@ -113,6 +118,62 @@ func FetchRoutes() {
 				rawVariantsMap[routeID] = append(rawVariantsMap[routeID], currentVariant)
 			}
 		}
+	}
+
+	// --- NORMALISATION DES ARRÊTS DE MÉTRO PAR NOM ---
+	// Les arrêts de métro existent en double (un par sens) avec des IDs différents
+	// mais le même nom. On normalise pour que les deux sens partagent les mêmes IDs.
+	linesFileData, _ := os.ReadFile(LinesFile)
+	var linesInfo []map[string]interface{}
+	json.Unmarshal(linesFileData, &linesInfo)
+	metroRouteIDs := make(map[string]bool)
+	for _, l := range linesInfo {
+		if fmt.Sprint(l["mode"]) == string(TransportModeMetro) {
+			metroRouteIDs[fmt.Sprint(l["id"])] = true
+		}
+	}
+
+	for routeID, variants := range rawVariantsMap {
+		if !metroRouteIDs[routeID] {
+			continue
+		}
+		// Prioriser le variant le plus long pour choisir l'ID canonique
+		sort.Slice(variants, func(i, j int) bool { return len(variants[i]) > len(variants[j]) })
+
+		// nom → premier ID rencontré = ID canonique
+		nameToCanonical := make(map[string]string)
+		for _, v := range variants {
+			for _, stopID := range v {
+				if name := stopNameMap[stopID]; name != "" {
+					if _, exists := nameToCanonical[name]; !exists {
+						nameToCanonical[name] = stopID
+					}
+				}
+			}
+		}
+
+		// Remplacer dans chaque variant les IDs "doublon" par l'ID canonique
+		normalized := make([][]string, 0, len(variants))
+		for _, v := range variants {
+			seenIDs := make(map[string]bool)
+			var normalizedV []string
+			for _, stopID := range v {
+				canonicalID := stopID
+				if name := stopNameMap[stopID]; name != "" {
+					if cid, ok := nameToCanonical[name]; ok {
+						canonicalID = cid
+					}
+				}
+				if !seenIDs[canonicalID] {
+					normalizedV = append(normalizedV, canonicalID)
+					seenIDs[canonicalID] = true
+				}
+			}
+			if len(normalizedV) >= 2 {
+				normalized = append(normalized, normalizedV)
+			}
+		}
+		rawVariantsMap[routeID] = normalized
 	}
 
 	var routeIDs []string
