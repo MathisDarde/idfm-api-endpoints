@@ -141,10 +141,20 @@ func FetchRoutes() {
 				continue
 			}
 			currentVariant := buildVariantFromPolyline(routeStops[routeID], polyline, routeMode[routeID])
+			currentVariant = applyRouteSpecificVariantFixes(routeID, currentVariant)
 			if len(currentVariant) >= 2 {
 				rawVariantsMap[routeID] = append(rawVariantsMap[routeID], currentVariant)
 			}
 		}
+	}
+
+	// Route-specific normalization pass after all variants were collected.
+	for routeID, variants := range rawVariantsMap {
+		out := make([][]string, 0, len(variants))
+		for _, v := range variants {
+			out = append(out, applyRouteSpecificVariantFixes(routeID, v))
+		}
+		rawVariantsMap[routeID] = out
 	}
 
 	// --- NORMALISATION DES ARRÊTS DE MÉTRO PAR NOM ---
@@ -400,6 +410,16 @@ func buildVariantFromPolyline(stops []stopPoint, polyline []geoPoint, mode Trans
 		return nil
 	}
 
+	stopsByID := make(map[string]stopPoint, len(stops))
+	for _, s := range stops {
+		if s.ID == "" {
+			continue
+		}
+		if _, ok := stopsByID[s.ID]; !ok {
+			stopsByID[s.ID] = s
+		}
+	}
+
 	projected := make([]projectedStop, 0, len(stops))
 	for _, s := range stops {
 		distance, position := nearestDistanceAndPosition(polyline, s)
@@ -419,28 +439,425 @@ func buildVariantFromPolyline(stops []stopPoint, polyline []geoPoint, mode Trans
 
 	thresholds := thresholdsForMode(mode)
 	uniqueStops := uniqueStopCount(stops)
-	minStops := 2
-	if uniqueStops > 50 {
-		minStops = 15
-	} else if uniqueStops > 20 {
-		minStops = 8
+	minStops := minStopsForMode(mode, uniqueStops)
+
+	best, bestThreshold, ok := pickBestCandidate(projected, thresholds, mode, minStops)
+	if !ok {
+		return nil
 	}
 
-	best := make([]string, 0)
-	for _, threshold := range thresholds {
-		candidate := collectProjectedStops(projected, threshold)
-		if len(candidate) >= minStops {
-			best = candidate
-			break // thresholds are increasing; first valid is best (most strict)
+	refined := refineVariant(projected, stopsByID, best, bestThreshold, mode)
+	if len(refined) >= 2 {
+		return refined
+	}
+	return best
+}
+
+type candidateInfo struct {
+	IDs       []string
+	Distances []float64
+	Threshold float64
+	Count     int
+	MaxDist   float64
+	P90Dist   float64
+	FarCount  int
+}
+
+func minStopsForMode(mode TransportMode, uniqueStops int) int {
+	// IMPORTANT:
+	// - The polyline we process can represent only a branch/portion of the full route.
+	// - Using a large minStops based on the whole line forces thresholds up and
+	//   pulls stops from nearby branches (exactly the bug we want to avoid).
+	base := 2
+	if uniqueStops >= 20 {
+		base = 3
+	}
+	if uniqueStops >= 40 {
+		base = 4
+	}
+	switch mode {
+	case TransportModeMetro:
+		base++
+	case TransportModeRer, TransportModeTransilien, TransportModeTer, TransportModeTramway:
+		base++
+	}
+	if base > 6 {
+		base = 6
+	}
+	return base
+}
+
+func pickBestCandidate(projected []projectedStop, thresholds []float64, mode TransportMode, minStops int) ([]string, float64, bool) {
+	if len(thresholds) == 0 {
+		return nil, 0, false
+	}
+
+	infos := make([]candidateInfo, 0, len(thresholds))
+	for _, t := range thresholds {
+		ids, dists := collectProjectedStopsWithDistances(projected, t)
+		if len(ids) < minStops {
+			continue
+		}
+		info := candidateInfo{
+			IDs:       ids,
+			Distances: dists,
+			Threshold: t,
+			Count:     len(ids),
+			MaxDist:   maxFloatSlice(dists),
+			P90Dist:   percentile(dists, 0.9),
+			FarCount:  farCountForMode(dists, mode, t),
+		}
+		infos = append(infos, info)
+	}
+
+	if len(infos) == 0 {
+		return nil, 0, false
+	}
+
+	// Prefer candidates that:
+	// 1) include as few "far" stops as possible (branch contamination)
+	// 2) include many stops
+	// 3) have small distance dispersion
+	// 4) use smaller thresholds
+	sort.Slice(infos, func(i, j int) bool {
+		a := infos[i]
+		b := infos[j]
+		if a.FarCount != b.FarCount {
+			return a.FarCount < b.FarCount
+		}
+		if a.Count != b.Count {
+			return a.Count > b.Count
+		}
+		if a.P90Dist != b.P90Dist {
+			return a.P90Dist < b.P90Dist
+		}
+		if a.MaxDist != b.MaxDist {
+			return a.MaxDist < b.MaxDist
+		}
+		return a.Threshold < b.Threshold
+	})
+
+	best := infos[0]
+	return best.IDs, best.Threshold, true
+}
+
+func farCountForMode(dists []float64, mode TransportMode, threshold float64) int {
+	if len(dists) == 0 {
+		return 0
+	}
+	cap := farDistanceCapForMode(mode)
+	// Also treat near-threshold stops as suspicious when threshold is large.
+	nearThr := threshold * 0.9
+	if nearThr < cap {
+		cap = nearThr
+	}
+	count := 0
+	for _, d := range dists {
+		if d > cap {
+			count++
+		}
+	}
+	return count
+}
+
+func farDistanceCapForMode(mode TransportMode) float64 {
+	switch mode {
+	case TransportModeMetro:
+		return 220
+	case TransportModeRer, TransportModeTransilien, TransportModeTer, TransportModeTramway:
+		return 420
+	case TransportModeBus:
+		return 160
+	default:
+		return 420
+	}
+}
+
+func collectProjectedStopsWithDistances(projected []projectedStop, maxDistance float64) ([]string, []float64) {
+	seen := make(map[string]bool)
+	ordered := make([]string, 0, len(projected))
+	dists := make([]float64, 0, len(projected))
+
+	for _, p := range projected {
+		if p.Distance > maxDistance {
+			continue
+		}
+		if seen[p.ID] {
+			continue
+		}
+		ordered = append(ordered, p.ID)
+		dists = append(dists, p.Distance)
+		seen[p.ID] = true
+	}
+
+	return ordered, dists
+}
+
+func refineVariant(projected []projectedStop, stopsByID map[string]stopPoint, ids []string, threshold float64, mode TransportMode) []string {
+	if len(ids) < 2 {
+		return ids
+	}
+
+	// Unique projected list (best distance per stop) for candidate insertion.
+	bestProj := make(map[string]projectedStop, len(projected))
+	for _, p := range projected {
+		if existing, ok := bestProj[p.ID]; !ok || p.Distance < existing.Distance {
+			bestProj[p.ID] = p
+		}
+	}
+	uniqProj := make([]projectedStop, 0, len(bestProj))
+	for _, p := range bestProj {
+		uniqProj = append(uniqProj, p)
+	}
+	sort.Slice(uniqProj, func(i, j int) bool { return uniqProj[i].Position < uniqProj[j].Position })
+
+	// 1) Fill large gaps with plausible missing stops.
+	filled := fillLargeGaps(ids, uniqProj, stopsByID, threshold, mode)
+
+	// 2) Remove obvious detours (typical symptom of branch contamination).
+	pruned := pruneDetours(filled, stopsByID, bestProj, mode)
+
+	return pruned
+}
+
+func fillLargeGaps(ids []string, uniqProj []projectedStop, stopsByID map[string]stopPoint, threshold float64, mode TransportMode) []string {
+	if len(ids) < 2 {
+		return ids
+	}
+	positions := make(map[string]float64, len(uniqProj))
+	distToPolyline := make(map[string]float64, len(uniqProj))
+	for _, p := range uniqProj {
+		positions[p.ID] = p.Position
+		distToPolyline[p.ID] = p.Distance
+	}
+
+	seen := make(map[string]bool, len(ids))
+	for _, id := range ids {
+		seen[id] = true
+	}
+
+	maxInsertDistance := gapInsertMaxDistanceForMode(mode, threshold)
+
+	// Limit iterations to avoid pathological loops.
+	for insertions := 0; insertions < 12; insertions++ {
+		gapDistances := make([]float64, 0, len(ids)-1)
+		for i := 0; i < len(ids)-1; i++ {
+			a, okA := stopsByID[ids[i]]
+			b, okB := stopsByID[ids[i+1]]
+			if !okA || !okB {
+				continue
+			}
+			gapDistances = append(gapDistances, approxDistanceMeters(a.Lat, a.Lon, b.Lat, b.Lon))
+		}
+		p90 := percentile(gapDistances, 0.9)
+		gapThreshold := gapDistanceThresholdForMode(mode)
+		if p90 > 0 {
+			gapThreshold = math.Max(gapThreshold, math.Min(p90*1.7, p90+1500.0))
+		}
+
+		inserted := false
+		for i := 0; i < len(ids)-1; i++ {
+			ida := ids[i]
+			idb := ids[i+1]
+			a, okA := stopsByID[ida]
+			b, okB := stopsByID[idb]
+			if !okA || !okB {
+				continue
+			}
+			dAB := approxDistanceMeters(a.Lat, a.Lon, b.Lat, b.Lon)
+			if dAB <= gapThreshold {
+				continue
+			}
+
+			posA, okPosA := positions[ida]
+			posB, okPosB := positions[idb]
+			if !okPosA || !okPosB {
+				continue
+			}
+			minPos := posA
+			maxPos := posB
+			if minPos > maxPos {
+				minPos, maxPos = maxPos, minPos
+			}
+
+			bestID := ""
+			bestScore := math.MaxFloat64
+			for _, p := range uniqProj {
+				if seen[p.ID] {
+					continue
+				}
+				if p.Distance > maxInsertDistance {
+					continue
+				}
+				c, okC := stopsByID[p.ID]
+				if !okC {
+					continue
+				}
+				dAC := approxDistanceMeters(a.Lat, a.Lon, c.Lat, c.Lon)
+				dCB := approxDistanceMeters(c.Lat, c.Lon, b.Lat, b.Lon)
+				maxLeg := math.Max(dAC, dCB)
+				// Accept only if it meaningfully reduces the large gap.
+				if maxLeg >= dAB*0.85 {
+					continue
+				}
+				within := p.Position > minPos && p.Position < maxPos
+				// If the projected position isn't between the endpoints (polyline fold/branch),
+				// only accept very strong splits.
+				if !within && maxLeg >= dAB*0.60 {
+					continue
+				}
+				// Prefer smaller max leg + smaller distance to polyline.
+				score := maxLeg + distToPolyline[p.ID]
+				if !within {
+					score += 2000
+				}
+				if score < bestScore {
+					bestScore = score
+					bestID = p.ID
+				}
+			}
+
+			if bestID != "" {
+				// Insert and restart scan.
+				ids = append(ids[:i+1], append([]string{bestID}, ids[i+1:]...)...)
+				seen[bestID] = true
+				inserted = true
+				break
+			}
+		}
+
+		if !inserted {
+			break
 		}
 	}
 
-	if len(best) >= 2 {
-		return best
+	return ids
+}
+
+func pruneDetours(ids []string, stopsByID map[string]stopPoint, projByID map[string]projectedStop, mode TransportMode) []string {
+	if len(ids) < 3 {
+		return ids
+	}
+	detourThreshold := detourThresholdForMode(mode)
+
+	changed := true
+	for changed {
+		changed = false
+		out := make([]string, 0, len(ids))
+		out = append(out, ids[0])
+		for i := 1; i < len(ids)-1; i++ {
+			a, okA := stopsByID[out[len(out)-1]]
+			b, okB := stopsByID[ids[i]]
+			c, okC := stopsByID[ids[i+1]]
+			if !okA || !okB || !okC {
+				out = append(out, ids[i])
+				continue
+			}
+			dAB := approxDistanceMeters(a.Lat, a.Lon, b.Lat, b.Lon)
+			dBC := approxDistanceMeters(b.Lat, b.Lon, c.Lat, c.Lon)
+			dAC := approxDistanceMeters(a.Lat, a.Lon, c.Lat, c.Lon)
+			detour := (dAB + dBC) - dAC
+
+			if detour > detourThreshold {
+				pb := projByID[ids[i]].Distance
+				pa := projByID[out[len(out)-1]].Distance
+				pc := projByID[ids[i+1]].Distance
+				// Remove the middle stop if it's likely off the polyline compared to its neighbors.
+				if pb > pa && pb > pc {
+					changed = true
+					continue
+				}
+			}
+			out = append(out, ids[i])
+		}
+		out = append(out, ids[len(ids)-1])
+		ids = out
 	}
 
-	// IMPORTANT: no fallback that includes far-away stops.
-	return nil
+	return ids
+}
+
+func detourThresholdForMode(mode TransportMode) float64 {
+	switch mode {
+	case TransportModeMetro:
+		return 700
+	case TransportModeRer, TransportModeTransilien, TransportModeTer, TransportModeTramway:
+		return 1500
+	case TransportModeBus:
+		return 500
+	default:
+		return 1500
+	}
+}
+
+func gapDistanceThresholdForMode(mode TransportMode) float64 {
+	// If two consecutive stops are farther apart than this, we try to insert missing
+	// intermediate stops that project between them on the polyline.
+	switch mode {
+	case TransportModeMetro:
+		return 1800
+	case TransportModeTramway:
+		return 2500
+	case TransportModeBus:
+		return 2000
+	case TransportModeRer, TransportModeTransilien, TransportModeTer:
+		return 3000
+	default:
+		return 3000
+	}
+}
+
+func gapInsertMaxDistanceForMode(mode TransportMode, threshold float64) float64 {
+	// Polylines are sometimes offset: allow a broader distance budget for gap filling
+	// than for the initial variant selection.
+	base := 600.0
+	switch mode {
+	case TransportModeMetro:
+		base = 700
+	case TransportModeTramway:
+		base = 900
+	case TransportModeBus:
+		base = 700
+	case TransportModeRer, TransportModeTransilien, TransportModeTer:
+		base = 1800
+	default:
+		base = 1800
+	}
+	// Keep some link with the chosen threshold, but never below the mode base.
+	return math.Max(base, threshold*3.0)
+}
+
+func maxFloatSlice(xs []float64) float64 {
+	maxV := 0.0
+	for _, v := range xs {
+		if v > maxV {
+			maxV = v
+		}
+	}
+	return maxV
+}
+
+func percentile(xs []float64, p float64) float64 {
+	if len(xs) == 0 {
+		return 0
+	}
+	cpy := make([]float64, len(xs))
+	copy(cpy, xs)
+	sort.Float64s(cpy)
+	if p <= 0 {
+		return cpy[0]
+	}
+	if p >= 1 {
+		return cpy[len(cpy)-1]
+	}
+	idx := int(p * float64(len(cpy)-1))
+	if idx < 0 {
+		idx = 0
+	}
+	if idx >= len(cpy) {
+		idx = len(cpy) - 1
+	}
+	return cpy[idx]
 }
 
 func thresholdsForMode(mode TransportMode) []float64 {
@@ -458,6 +875,80 @@ func thresholdsForMode(mode TransportMode) []float64 {
 	default:
 		return []float64{120, 200, 300, 400, 600, 800}
 	}
+}
+
+func applyRouteSpecificVariantFixes(routeID string, variant []string) []string {
+	// Keep this narrowly scoped to known problematic cases.
+	if routeID != "IDFM:C01742" || len(variant) < 2 {
+		return variant
+	}
+
+	// RER A west branches: Poissy must connect via Achères Ville.
+	poissy := "IDFM:monomodalStopPlace:47874"
+	acheresVille := "IDFM:monomodalStopPlace:46647"
+
+	idxPoissy := indexOfString(variant, poissy)
+	if idxPoissy == -1 {
+		return variant
+	}
+
+	variant = ensureAdjacent(variant, poissy, acheresVille)
+	return dedupeStringsPreserveOrder(variant)
+}
+
+func ensureAdjacent(ids []string, pivot, required string) []string {
+	i := indexOfString(ids, pivot)
+	if i == -1 {
+		return ids
+	}
+	// Already adjacent.
+	if (i > 0 && ids[i-1] == required) || (i < len(ids)-1 && ids[i+1] == required) {
+		return ids
+	}
+
+	// Prefer placing the required stop on the side that exists.
+	insertAt := i
+	if i == 0 {
+		insertAt = 1
+	}
+
+	// If required exists elsewhere, move it.
+	j := indexOfString(ids, required)
+	if j != -1 {
+		ids = append(ids[:j], ids[j+1:]...)
+		if j < insertAt {
+			insertAt--
+		}
+	}
+
+	// Insert required.
+	ids = append(ids[:insertAt], append([]string{required}, ids[insertAt:]...)...)
+	return ids
+}
+
+func dedupeStringsPreserveOrder(ids []string) []string {
+	seen := make(map[string]bool, len(ids))
+	out := make([]string, 0, len(ids))
+	for _, id := range ids {
+		if id == "" {
+			continue
+		}
+		if seen[id] {
+			continue
+		}
+		seen[id] = true
+		out = append(out, id)
+	}
+	return out
+}
+
+func indexOfString(xs []string, target string) int {
+	for i, x := range xs {
+		if x == target {
+			return i
+		}
+	}
+	return -1
 }
 
 func uniqueStopCount(stops []stopPoint) int {
