@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io"
+	"math"
 	"net/http"
 	"os"
 	"sort"
@@ -32,6 +33,23 @@ type OptimizedLine struct {
 	OptimalInfrastructure [][]string `json:"optimal_infrastructure"`
 }
 
+type stopPoint struct {
+	ID  string
+	Lat float64
+	Lon float64
+}
+
+type geoPoint struct {
+	Lat float64
+	Lon float64
+}
+
+type projectedStop struct {
+	ID       string
+	Distance float64
+	Position float64
+}
+
 func FetchRoutes() {
 	prepareBackupOrder(RoutesFile, RoutesBackup)
 
@@ -46,10 +64,11 @@ func FetchRoutes() {
 	var rawStops []map[string]interface{}
 	json.NewDecoder(respStops.Body).Decode(&rawStops)
 
-	stopLookup := make(map[string]string)
+	routeStops := make(map[string][]stopPoint)
 	stopNameMap := make(map[string]string) // stop_id → stop_name
 	for _, s := range rawStops {
 		stopID := fmt.Sprint(s["stop_id"])
+		routeID := normalizeRouteID(fmt.Sprint(s["id"]))
 		stopName := fmt.Sprint(s["stop_name"])
 		var lat, lon float64
 		if geo, ok := s["pointgeo"].(map[string]interface{}); ok {
@@ -60,9 +79,12 @@ func FetchRoutes() {
 			lon, _ = strconv.ParseFloat(fmt.Sprint(s["stop_lon"]), 64)
 		}
 
-		if stopID != "" && stopID != "<nil>" && lat != 0 {
-			key := fmt.Sprintf("%.4f,%.4f", lat, lon)
-			stopLookup[key] = stopID
+		if stopID != "" && stopID != "<nil>" && routeID != "" && lat != 0 {
+			routeStops[routeID] = append(routeStops[routeID], stopPoint{
+				ID:  stopID,
+				Lat: lat,
+				Lon: lon,
+			})
 		}
 		if stopID != "" && stopID != "<nil>" && stopName != "" && stopName != "<nil>" {
 			stopNameMap[stopID] = stopName
@@ -101,19 +123,7 @@ func FetchRoutes() {
 
 		for _, segment := range coordsSegments {
 			points := segment.([]interface{})
-			var currentVariant []string
-			var lastID string
-
-			for _, p := range points {
-				coord := p.([]interface{})
-				key := fmt.Sprintf("%.4f,%.4f", coord[1].(float64), coord[0].(float64))
-				if id, found := stopLookup[key]; found {
-					if id != lastID {
-						currentVariant = append(currentVariant, id)
-						lastID = id
-					}
-				}
-			}
+			currentVariant := buildVariantFromSegment(routeStops[routeID], points)
 			if len(currentVariant) >= 2 {
 				rawVariantsMap[routeID] = append(rawVariantsMap[routeID], currentVariant)
 			}
@@ -322,4 +332,162 @@ func hashSequence(s []string) string {
 	h := md5.New()
 	io.WriteString(h, strings.Join(s, ","))
 	return fmt.Sprintf("%x", h.Sum(nil))
+}
+
+func normalizeRouteID(raw string) string {
+	raw = strings.TrimSpace(raw)
+	if raw == "" || raw == "<nil>" {
+		return ""
+	}
+	if strings.HasPrefix(raw, "IDFM:") {
+		return raw
+	}
+	return "IDFM:" + raw
+}
+
+func buildVariantFromSegment(stops []stopPoint, rawPoints []interface{}) []string {
+	polyline := toPolyline(rawPoints)
+	if len(polyline) < 2 || len(stops) == 0 {
+		return nil
+	}
+
+	projected := make([]projectedStop, 0, len(stops))
+	for _, s := range stops {
+		distance, position := nearestDistanceAndPosition(polyline, s)
+		projected = append(projected, projectedStop{
+			ID:       s.ID,
+			Distance: distance,
+			Position: position,
+		})
+	}
+
+	sort.Slice(projected, func(i, j int) bool {
+		if projected[i].Position == projected[j].Position {
+			return projected[i].Distance < projected[j].Distance
+		}
+		return projected[i].Position < projected[j].Position
+	})
+
+	thresholds := []float64{120, 200, 300, 500, 800, 1200}
+	best := make([]string, 0)
+
+	for _, threshold := range thresholds {
+		candidate := collectProjectedStops(projected, threshold)
+		if len(candidate) >= 2 {
+			best = candidate
+		}
+
+		if len(candidate) >= int(0.8*float64(len(stops))) {
+			break
+		}
+	}
+
+	if len(best) >= 2 {
+		return best
+	}
+
+	// Fallback: conserver l'ordre projeté pour éviter de sortir un variant vide.
+	return collectProjectedStops(projected, math.MaxFloat64)
+}
+
+func collectProjectedStops(projected []projectedStop, maxDistance float64) []string {
+	seen := make(map[string]bool)
+	ordered := make([]string, 0, len(projected))
+
+	for _, p := range projected {
+		if p.Distance > maxDistance {
+			continue
+		}
+		if seen[p.ID] {
+			continue
+		}
+		ordered = append(ordered, p.ID)
+		seen[p.ID] = true
+	}
+
+	return ordered
+}
+
+func toPolyline(rawPoints []interface{}) []geoPoint {
+	polyline := make([]geoPoint, 0, len(rawPoints))
+	for _, raw := range rawPoints {
+		coord, ok := raw.([]interface{})
+		if !ok || len(coord) < 2 {
+			continue
+		}
+
+		lon, okLon := coord[0].(float64)
+		lat, okLat := coord[1].(float64)
+		if !okLon || !okLat {
+			continue
+		}
+
+		polyline = append(polyline, geoPoint{Lat: lat, Lon: lon})
+	}
+	return polyline
+}
+
+func nearestDistanceAndPosition(polyline []geoPoint, stop stopPoint) (float64, float64) {
+	if len(polyline) < 2 {
+		return math.MaxFloat64, 0
+	}
+
+	minDistance := math.MaxFloat64
+	bestPosition := 0.0
+	cumulative := 0.0
+
+	for i := 0; i < len(polyline)-1; i++ {
+		a := polyline[i]
+		b := polyline[i+1]
+
+		distance, segmentPosition, segmentLength := pointToSegmentDistance(stop, a, b)
+		if distance < minDistance {
+			minDistance = distance
+			bestPosition = cumulative + segmentPosition
+		}
+
+		cumulative += segmentLength
+	}
+
+	return minDistance, bestPosition
+}
+
+func pointToSegmentDistance(p stopPoint, a geoPoint, b geoPoint) (float64, float64, float64) {
+	ax, ay := projectToMeters(a.Lat, a.Lon, a.Lat)
+	bx, by := projectToMeters(b.Lat, b.Lon, a.Lat)
+	px, py := projectToMeters(p.Lat, p.Lon, a.Lat)
+
+	abx := bx - ax
+	aby := by - ay
+	abLen2 := abx*abx + aby*aby
+	if abLen2 == 0 {
+		dx := px - ax
+		dy := py - ay
+		d := math.Sqrt(dx*dx + dy*dy)
+		return d, 0, 0
+	}
+
+	t := ((px-ax)*abx + (py-ay)*aby) / abLen2
+	if t < 0 {
+		t = 0
+	} else if t > 1 {
+		t = 1
+	}
+
+	projX := ax + t*abx
+	projY := ay + t*aby
+	dx := px - projX
+	dy := py - projY
+	distance := math.Sqrt(dx*dx + dy*dy)
+	segmentLength := math.Sqrt(abLen2)
+	position := t * segmentLength
+
+	return distance, position, segmentLength
+}
+
+func projectToMeters(lat float64, lon float64, refLat float64) (float64, float64) {
+	latRad := refLat * math.Pi / 180.0
+	x := lon * 111320.0 * math.Cos(latRad)
+	y := lat * 110540.0
+	return x, y
 }
