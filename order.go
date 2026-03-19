@@ -105,6 +105,21 @@ func FetchRoutes() {
 	rawVariantsMap := make(map[string][][]string)
 	lineNames := make(map[string]string)
 
+	// Build quick lookups from lines.json (mode + short name).
+	linesFileData, _ := os.ReadFile(LinesFile)
+	var linesInfo []map[string]interface{}
+	_ = json.Unmarshal(linesFileData, &linesInfo)
+	routeMode := make(map[string]TransportMode)
+	metroRouteIDs := make(map[string]bool)
+	for _, l := range linesInfo {
+		id := fmt.Sprint(l["id"])
+		mode := TransportMode(fmt.Sprint(l["mode"]))
+		routeMode[id] = mode
+		if mode == TransportModeMetro {
+			metroRouteIDs[id] = true
+		}
+	}
+
 	for _, item := range rawTraces {
 		rawID := fmt.Sprint(item["id_ilico"])
 		if rawID == "" || rawID == "<nil>" {
@@ -116,14 +131,16 @@ func FetchRoutes() {
 
 		shape, _ := item["shape"].(map[string]interface{})
 		geometry, _ := shape["geometry"].(map[string]interface{})
-		coordsSegments, ok := geometry["coordinates"].([]interface{})
-		if !ok {
+		polylines := polylinesFromGeometry(geometry)
+		if len(polylines) == 0 {
 			continue
 		}
 
-		for _, segment := range coordsSegments {
-			points := segment.([]interface{})
-			currentVariant := buildVariantFromSegment(routeStops[routeID], points)
+		for _, polyline := range polylines {
+			if len(polyline) < 2 {
+				continue
+			}
+			currentVariant := buildVariantFromPolyline(routeStops[routeID], polyline, routeMode[routeID])
 			if len(currentVariant) >= 2 {
 				rawVariantsMap[routeID] = append(rawVariantsMap[routeID], currentVariant)
 			}
@@ -133,16 +150,6 @@ func FetchRoutes() {
 	// --- NORMALISATION DES ARRÊTS DE MÉTRO PAR NOM ---
 	// Les arrêts de métro existent en double (un par sens) avec des IDs différents
 	// mais le même nom. On normalise pour que les deux sens partagent les mêmes IDs.
-	linesFileData, _ := os.ReadFile(LinesFile)
-	var linesInfo []map[string]interface{}
-	json.Unmarshal(linesFileData, &linesInfo)
-	metroRouteIDs := make(map[string]bool)
-	for _, l := range linesInfo {
-		if fmt.Sprint(l["mode"]) == string(TransportModeMetro) {
-			metroRouteIDs[fmt.Sprint(l["id"])] = true
-		}
-	}
-
 	for routeID, variants := range rawVariantsMap {
 		if !metroRouteIDs[routeID] {
 			continue
@@ -248,8 +255,47 @@ func FetchRoutes() {
 			}
 		}
 
+		// 3. Filtre anti-outlier géographique : supprimer les liens beaucoup trop longs
+		// (symptôme typique d'un variant erroné).
+		coordsByStopID := make(map[string]stopPoint)
+		for _, s := range routeStops[routeID] {
+			if s.ID == "" {
+				continue
+			}
+			if _, ok := coordsByStopID[s.ID]; !ok {
+				coordsByStopID[s.ID] = s
+			}
+		}
+
+		adjDistances := make([]float64, 0, 256)
+		for _, v := range variants {
+			for i := 0; i < len(v)-1; i++ {
+				a, okA := coordsByStopID[v[i]]
+				b, okB := coordsByStopID[v[i+1]]
+				if !okA || !okB {
+					continue
+				}
+				adjDistances = append(adjDistances, approxDistanceMeters(a.Lat, a.Lon, b.Lat, b.Lon))
+			}
+		}
+		sort.Float64s(adjDistances)
+		maxReasonable := math.MaxFloat64
+		if len(adjDistances) >= 10 {
+			p90 := adjDistances[int(0.9*float64(len(adjDistances)-1))]
+			maxReasonable = math.Max(p90*2.0, p90+3000.0)
+		}
+
 		var infrastructure [][]string
 		for _, seg := range infrastructureMap {
+			if maxReasonable != math.MaxFloat64 {
+				a, okA := coordsByStopID[seg[0]]
+				b, okB := coordsByStopID[seg[1]]
+				if okA && okB {
+					if approxDistanceMeters(a.Lat, a.Lon, b.Lat, b.Lon) > maxReasonable {
+						continue
+					}
+				}
+			}
 			infrastructure = append(infrastructure, seg)
 		}
 
@@ -346,7 +392,10 @@ func normalizeRouteID(raw string) string {
 }
 
 func buildVariantFromSegment(stops []stopPoint, rawPoints []interface{}) []string {
-	polyline := toPolyline(rawPoints)
+	return buildVariantFromPolyline(stops, toPolyline(rawPoints), TransportMode(""))
+}
+
+func buildVariantFromPolyline(stops []stopPoint, polyline []geoPoint, mode TransportMode) []string {
 	if len(polyline) < 2 || len(stops) == 0 {
 		return nil
 	}
@@ -368,17 +417,21 @@ func buildVariantFromSegment(stops []stopPoint, rawPoints []interface{}) []strin
 		return projected[i].Position < projected[j].Position
 	})
 
-	thresholds := []float64{120, 200, 300, 500, 800, 1200}
-	best := make([]string, 0)
+	thresholds := thresholdsForMode(mode)
+	uniqueStops := uniqueStopCount(stops)
+	minStops := 2
+	if uniqueStops > 50 {
+		minStops = 15
+	} else if uniqueStops > 20 {
+		minStops = 8
+	}
 
+	best := make([]string, 0)
 	for _, threshold := range thresholds {
 		candidate := collectProjectedStops(projected, threshold)
-		if len(candidate) >= 2 {
+		if len(candidate) >= minStops {
 			best = candidate
-		}
-
-		if len(candidate) >= int(0.8*float64(len(stops))) {
-			break
+			break // thresholds are increasing; first valid is best (most strict)
 		}
 	}
 
@@ -386,8 +439,115 @@ func buildVariantFromSegment(stops []stopPoint, rawPoints []interface{}) []strin
 		return best
 	}
 
-	// Fallback: conserver l'ordre projeté pour éviter de sortir un variant vide.
-	return collectProjectedStops(projected, math.MaxFloat64)
+	// IMPORTANT: no fallback that includes far-away stops.
+	return nil
+}
+
+func thresholdsForMode(mode TransportMode) []float64 {
+	// Caps are intentionally conservative: large thresholds easily pull in stops from
+	// nearby branches and create non-existent direct links.
+	switch mode {
+	case TransportModeMetro:
+		return []float64{80, 120, 160, 200, 250, 300, 400}
+	case TransportModeRer, TransportModeTransilien, TransportModeTer, TransportModeTramway:
+		return []float64{120, 200, 300, 400, 600, 800}
+	case TransportModeCableway, TransportModeNavette:
+		return []float64{80, 120, 200, 300, 400, 600}
+	case TransportModeBus:
+		return []float64{40, 60, 80, 100, 150, 200, 300}
+	default:
+		return []float64{120, 200, 300, 400, 600, 800}
+	}
+}
+
+func uniqueStopCount(stops []stopPoint) int {
+	seen := make(map[string]bool, len(stops))
+	for _, s := range stops {
+		if s.ID == "" {
+			continue
+		}
+		seen[s.ID] = true
+	}
+	return len(seen)
+}
+
+func polylinesFromGeometry(geometry map[string]interface{}) [][]geoPoint {
+	if geometry == nil {
+		return nil
+	}
+	geomType := fmt.Sprint(geometry["type"])
+	coords := geometry["coordinates"]
+
+	switch geomType {
+	case "LineString":
+		points, ok := coords.([]interface{})
+		if !ok {
+			return nil
+		}
+		p := toPolyline(points)
+		if len(p) < 2 {
+			return nil
+		}
+		return [][]geoPoint{p}
+	case "MultiLineString":
+		segments, ok := coords.([]interface{})
+		if !ok {
+			return nil
+		}
+		polylines := make([][]geoPoint, 0, len(segments))
+		for _, segRaw := range segments {
+			segPoints, ok := segRaw.([]interface{})
+			if !ok {
+				continue
+			}
+			p := toPolyline(segPoints)
+			if len(p) >= 2 {
+				polylines = append(polylines, p)
+			}
+		}
+		return polylines
+	default:
+		// Best-effort: inspect nesting to decide LineString vs MultiLineString.
+		segments, ok := coords.([]interface{})
+		if !ok || len(segments) == 0 {
+			return nil
+		}
+		first, ok := segments[0].([]interface{})
+		if !ok || len(first) == 0 {
+			return nil
+		}
+		// If first[0] is a number => coords is a point => segments is actually a LineString.
+		if _, okNum := first[0].(float64); okNum {
+			p := toPolyline(segments)
+			if len(p) < 2 {
+				return nil
+			}
+			return [][]geoPoint{p}
+		}
+		// Otherwise treat as MultiLineString.
+		polylines := make([][]geoPoint, 0, len(segments))
+		for _, segRaw := range segments {
+			segPoints, ok := segRaw.([]interface{})
+			if !ok {
+				continue
+			}
+			p := toPolyline(segPoints)
+			if len(p) >= 2 {
+				polylines = append(polylines, p)
+			}
+		}
+		return polylines
+	}
+}
+
+func approxDistanceMeters(lat1, lon1, lat2, lon2 float64) float64 {
+	// Equirectangular approximation (good enough at IDF scale).
+	refLat := (lat1 + lat2) / 2.0
+	x1, y1 := projectToMeters(lat1, lon1, refLat)
+	x2, y2 := projectToMeters(lat2, lon2, refLat)
+	dx := x2 - x1
+	dy := y2 - y1
+	return math.Sqrt(dx*dx + dy*dy)
 }
 
 func collectProjectedStops(projected []projectedStop, maxDistance float64) []string {
